@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: beamer_latex_table 
+# key: beamer_latex_table
+# --
+
+#+BEGIN_EXPORT latex
+\begin{table}
+\centering
+\resizebox{\textwidth}{12mm}{ %12可随机设置，调整到适合自己的大小为止
+    ${1:latex表格} 
+}
+\end{table}
+#+END_EXPORT 
+
+$0
