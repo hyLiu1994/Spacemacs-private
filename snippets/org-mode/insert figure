@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: insert figure 
+# key: insert_Figure
+# --
+
+#+CAPTION: ${1: 图名}
+#+ATTR_HTML: :width ${2: 100%}
+[[${3: 图片位置}]]
+$0

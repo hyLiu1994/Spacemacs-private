@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: fig html     
+# key: fig_html
+# --
+
+#+CAPTION: ${1: 图名}
+#+ATTR_HTML: :width ${2: 100%}
+$0

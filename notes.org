@@ -1,0 +1,5 @@
+* Tasks
+** DONE 
+   CLOSED: [2019-06-24 Mon 17:47]
+   [2019-06-24 Mon]
+   [[file:~/.spacemacs.d/init.el::;;%20(default%20'("ag"%20"pt"%20"ack"%20"grep"))]]

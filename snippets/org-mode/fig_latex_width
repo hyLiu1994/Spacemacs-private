@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: fig_latex_width 
+# key: fig_latex_width 
+# --
+
+#+CAPTION: ${1: 图名} 
+#+ATTR_LaTeX: width = \textwidth 
+#+LABEL: ${2: fig:label }
+$0

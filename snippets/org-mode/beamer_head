@@ -1,0 +1,32 @@
+# -*- mode: snippet -*-
+# name: beamer_head
+# key: beamer_head
+# --
+
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:t f:t inline:t num:t p:nil pri:nil prop:nil stat:t tags:t
+#+options: tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: ${1: 文件名称}
+#+date: ${2: 2019-07-11 Thu}
+#+author: 刘恒宇 
+#+email: 1710589@stu.neu.edu.cn 
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 26.2 (Org mode 9.2.4)
+
+#+options: H:2
+#+latex_class: beamer
+#+columns: %45ITEM %10BEAMER_env(Env) %10BEAMER_act(Act) %4BEAMER_col(Col) %8BEAMER_opt(Opt)
+#+beamer_theme: default
+#+beamer_color_theme:
+#+beamer_font_theme:
+#+beamer_inner_theme:
+#+beamer_outer_theme:
+#+beamer_header:
+
+#+latex_header: \mode<beamer>{\usetheme{Madrid}}
+#+LATEX_HEADER:\usepackage{ctex}
+
+

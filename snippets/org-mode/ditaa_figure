@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: ditaa_figure
+# key: ditaa_figure
+# --
+
+#+BEGIN_SRC ditaa :file ${1: figure/test.png}
+$0
+#+END_SRC
+

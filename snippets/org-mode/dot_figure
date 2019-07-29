@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: dot_figure 
+# key: dot_figure
+# --
+#+BEGIN_SRC dot :file ${1: 文件路径} :cmdline -Kdot -Tpng
+  digraph structs {
+  $0
+  }
+#+END_SRC
+
