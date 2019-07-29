@@ -329,6 +329,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (setq-default dotspacemacs-configuration-layers
                 '((org :variables org-projectile-file "~/org-notes/task.org")))
 
+  (setq-default dotspacemacs-configuration-layers
+                '((latex :variables latex-build-command "XeLaTeX")))
+
   ;;(setq org-reveal-root "file:///Users/liusixu/Documents/ProgramCode/reveal.js/")
   (setq org-reveal-root "https://cdn.bootcss.com/reveal.js/3.8.0/")
 
