@@ -4,6 +4,6 @@
 # --
 
 #+CAPTION: ${1: 图名} 
-#+ATTR_LaTeX: width = \textwidth 
-#+LABEL: ${2: fig:label }
+#+ATTR_LATEX: :width ${2: 0.85}\linewidth
+#+LABEL: ${3: fig:label }
 $0
