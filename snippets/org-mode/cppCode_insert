@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name:  cppCode_insert 
+# key:  cppCode insert
+# --
+
+#+BEGIN_SRC c++
+$0
+#+END_SRC
