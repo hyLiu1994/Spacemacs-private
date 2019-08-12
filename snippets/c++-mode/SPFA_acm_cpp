@@ -1,0 +1,38 @@
+# -*- mode: snippet -*-
+# name: SPFA_acm_cpp 
+# key: SPFA_acm_cpp
+# --
+const int INF = 1e9;
+int dist[maxn],n;
+struct upd{
+    int nextId;
+    int val;
+    friend bool operator < (upd a, upd b)
+    {
+        //结构体中，x小的优先级高
+        return a.val > b.val;
+    }
+};
+void SPFA(int sNode){
+    priority_queue <upd> que;
+    upd tmp; tmp.nextId = sNode; tmp.val = 0;
+    que.push(tmp);
+    for (int i = 0 ;i<= n ;i++)
+    dist[i] = INF;
+    dist[sNode] = 0;
+    while (!que.empty()){
+        upd tmp = que.top();
+        int nId = tmp.nextId;
+        que.pop();
+        for (int i = 0 ;i< node[nId].size() ;i++){
+            int nextId = node[nId][i].nextId;
+            if (node[nId][i].dist + dist[nId]< dist[nextId]){
+                dist[nextId] = node[nId][i].dist + dist[nId];
+                tmp.nextId = nextId;
+                tmp.val = dist[nextId];
+                que.push(tmp);
+            }
+        }
+    }
+}
+
