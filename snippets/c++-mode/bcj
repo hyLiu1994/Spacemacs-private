@@ -1,0 +1,23 @@
+# -*- mode: snippet -*-
+# name: bcj_acm 
+# key: bcj_acm 
+# --
+
+const int maxn = ${1: 30000+100};
+int fa[maxn];
+void init(int n){
+    for (int i = 0 ;i<= n ;i++)
+        fa[i] = i;
+}
+int Find(int v){
+    if (v == fa[v])
+        return v;
+    fa[v] = Find(fa[v]);
+    return fa[v];
+}
+void update(int u, int v){
+    int fu = Find(u);
+    int fv = Find(v);
+    fa[fu] = fv;
+}
+$0
