@@ -142,7 +142,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 13 
+                               :size 20 
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -316,8 +316,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;; Ex. darktooth-theme -> darktooth
   (setq-default dotspacemacs-themes '(
                                       monokai
-                                      solarized-dark
-                                      spacemacs-light
+                                      ;;solarized-dark
+                                      ;;spacemacs-light
                                       ;;zenburn
                                       ;;moe-dark
                                       ;;moe-light
