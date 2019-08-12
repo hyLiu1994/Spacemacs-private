@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: define_edge_cpp 
+# key: define_edge_cpp
+# --
+
+struct edge{
+    int u,v;
+    int d;
+}E[maxn*maxn];
+bool cmp(const edge& a, const edge& b){
+     return a.d < b.d;
+}
