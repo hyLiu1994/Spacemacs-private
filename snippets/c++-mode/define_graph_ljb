@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: define_graph_ljb
+# key: define_graph_ljb
+# --
+
+const int maxn = 1010;
+struct edge{
+    int nextId;
+    int dist;
+};
+vector <edge> node[maxn];
+
