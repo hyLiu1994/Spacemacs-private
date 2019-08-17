@@ -142,7 +142,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 20 
+                               :size 13
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -325,7 +325,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
                                       ;;soothe
                                       ;;gotham
                                       ))
-
+  
   (setq-default dotspacemacs-configuration-layers
                 '((org :variables org-projectile-file "~/org-notes/task.org")))
   (setq-default dotspacemacs-configuration-layers
@@ -365,6 +365,10 @@ you should place your code here."
   ;; org-mode 自动缩进
   (setq org-startup-indented t)
 
+  ;; 设置f7为透明度增加 f8透明度降低
+  (global-set-key (kbd "<f7>") 'spacemacs/increase-transparency) 
+  (global-set-key (kbd "<f8>") 'spacemacs/decrease-transparency) 
+
   ;;将jk等价于esc键位 
   (setq-default evil-escape-key-sequence "jk")
 
@@ -401,6 +405,13 @@ you should place your code here."
   ;; define the refile targets
   (defvar org-agenda-dir "" "gtd org files location")
   (setq-default org-agenda-dir "~/org-notes")
+  ;; Set to the location of your Org files on your local system
+  (setq-default org-directory "~/org")
+  ;; Set to the name of the file where new notes will be stored
+  (setq-default org-mobile-inbox-for-pull "~/org/flagged.org")
+  ;; Set to <your Dropbox root directory>/MobileOrg.
+  (setq-default org-mobile-directory "~/Dropbox/Apps/MobileOrg")
+
   (setq org-agenda-file-inbox (expand-file-name "Inbox.org" org-agenda-dir))
   (setq org-agenda-file-finished (expand-file-name "finished.org" org-agenda-dir))
   (setq org-agenda-file-task (expand-file-name "task.org" org-agenda-dir))
