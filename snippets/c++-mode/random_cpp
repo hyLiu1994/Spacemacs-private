@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: random_cpp
+# key: random_cpp
+# --
+
+srand((int)time(0)); 
+#define random(x) rand()%(x)
+$0
+
