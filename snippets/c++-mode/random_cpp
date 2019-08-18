@@ -3,7 +3,19 @@
 # key: random_cpp
 # --
 
+//生成随机数字
 srand((int)time(0)); 
-#define random(x) rand()%(x)
+int Rand(int d = -1){
+    if (d!=-1)
+        return (rand()%d);
+    else
+        return (rand());
+}
+long long BigRand(long long d = -1){
+    if (d!=-1)
+        return (RAND_MAX*(long long)(rand())+rand())%d;
+    else
+        return RAND_MAX*(long long)(rand())+rand();
+}
 $0
 
