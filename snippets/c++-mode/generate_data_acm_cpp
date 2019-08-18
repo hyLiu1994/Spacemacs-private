@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: generate_data_acm_cpp 
+# key: generate_data
+# --
+
+srand((int)time(0)); 
+for (int i = 1 ;i<= ${1: 20}; i++){
+    string a = "${2:../数据/A/tanxian}";
+    string b = to_string(i);
+    string c = ".in";
+    freopen((a+b+c).c_str(),"w",stdout);
+    $0
+}
+
