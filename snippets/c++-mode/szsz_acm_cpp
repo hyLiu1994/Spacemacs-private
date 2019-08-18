@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: szsz_acm_cpp 
+# key: szsz_acm_cpp
+# --
+
+int tree[maxn];
+    int add(int x,int v){
+    for (int i=x;i<=n;i+=i&(-i))
+        tree[i]+=v;
+    return 0;
+}
+int sum(int x){
+    int ans=0;
+    for (int i=x;i>0;i-=i&(-i))
+        ans+=tree[i];
+    return ans;
+}
