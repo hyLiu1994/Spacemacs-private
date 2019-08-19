@@ -360,6 +360,12 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here." 
 
+  ;;设置latex 默认编译器为xelatex
+  (after-load 'org
+              (setenv "PATH" (concat (getenv "PATH") ":/usr/local/texlive/2016/bin/x86_64-darwin/"))
+              (setq exec-path (append exec-path '("/usr/local/texlive/2016/bin/x86_64-darwin/")))
+              (setq org-latex-pdf-process '("xelatex -interaction nonstopmode %f" "xelatex -interaction nonstopmode %f"))
+             )
   
   (setq spaceline-org-clock-p t)
   ;; org-mode 自动缩进
@@ -382,6 +388,7 @@ you should place your code here."
 
     ;; org-mode环境下增加换行
   (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
+
 
   ;;(setq configuration-layer--elpa-archives
   ;;        ("org-cn"   . "http://elpa.emacs-china.org/org/")
