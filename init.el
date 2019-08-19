@@ -360,13 +360,6 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here." 
 
-  ;;设置latex 默认编译器为xelatex
-  (after-load 'org
-              (setenv "PATH" (concat (getenv "PATH") ":/usr/local/texlive/2016/bin/x86_64-darwin/"))
-              (setq exec-path (append exec-path '("/usr/local/texlive/2016/bin/x86_64-darwin/")))
-              (setq org-latex-pdf-process '("xelatex -interaction nonstopmode %f" "xelatex -interaction nonstopmode %f"))
-             )
-  
   (setq spaceline-org-clock-p t)
   ;; org-mode 自动缩进
   (setq org-startup-indented t)
@@ -521,8 +514,16 @@ you should place your code here."
   
   (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
 
+  ;;设置latex 默认编译器为xelatex
+  (setq org-latex-pdf-process '("xelatex -interaction nonstopmode %f"
+                                "xelatex -interaction nonstopmode %f"))
+  (setq org-latex-default-packages-alist
+        (remove '("AUTO" "inputenc" t) org-latex-default-packages-alist))
   
+
+
 )
+
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
