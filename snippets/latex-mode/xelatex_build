@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: xelatex_build 
+# key: xelatex_build
+# --
+
+%%% Local Variables:
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-master: t
+%%% TeX-command-extra-options: "-shell-escape"
+%%% TeX-engine: xetex
+%%% End:
