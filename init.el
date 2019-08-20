@@ -408,12 +408,15 @@ you should place your code here."
   ;; define the refile targets
   (defvar org-agenda-dir "" "gtd org files location")
   (setq-default org-agenda-dir "~/org-notes")
+
+  ;; 设置org-mobile内容
   ;; Set to the location of your Org files on your local system
-  (setq-default org-directory "~/org")
+  (setq-default org-directory "~/org-notes")
   ;; Set to the name of the file where new notes will be stored
-  (setq-default org-mobile-inbox-for-pull "~/org/flagged.org")
+  (setq-default org-mobile-inbox-for-pull (expand-file-name "Inbox.org" org-agenda-dir))
   ;; Set to <your Dropbox root directory>/MobileOrg.
-  (setq-default org-mobile-directory "~/Dropbox/Apps/MobileOrg")
+  (setq-default org-mobile-directory "~/Dropbox/应用/MobileOrg")
+  
 
   (setq org-agenda-file-inbox (expand-file-name "Inbox.org" org-agenda-dir))
   (setq org-agenda-file-finished (expand-file-name "finished.org" org-agenda-dir))
