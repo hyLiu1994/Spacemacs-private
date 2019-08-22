@@ -63,7 +63,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(ox-reveal pomodoro youdao-dictionary org-sync-snippets yasnippet-snippets)
+   dotspacemacs-additional-packages '(ox-reveal pomodoro youdao-dictionary org-sync-snippets yasnippet-snippets cdlatex auctex-lua)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -142,7 +142,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 20 
+                               :size 18 
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -360,6 +360,13 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here." 
 
+
+  ;; 修改org-mode下latex公式浏览大小
+  ;; Enlarge LaTeX Fragment in Org-mode
+  ;; Put this inside `dotspacemacs/user-config`
+  (require 'org)
+  (plist-put org-format-latex-options :scale 1.5)
+
   (setq spaceline-org-clock-p t)
   ;; org-mode 自动缩进
   (setq org-startup-indented t)
@@ -435,28 +442,28 @@ you should place your code here."
   ;;add multi-file journal
   (setq org-capture-templates
         '(("t" "Todo" entry (file+headline org-agenda-file-task "Tasks")
-           "* TODO [#B] %? :@Dealing:\n  %i\n"
+           "* TODO [#B] %? :@Dealing:\n %T %i\n"
            :empty-lines 1)
           ("w" "ToWork" entry (file+headline org-agenda-file-task "WorkSpace")
-           "* TODO [#B] %? :@Work:\n  %i\n"
+           "* TODO [#B] %? :@Work:\n %T %i\n"
            :empty-lines 1)
           ("l" "ToLearn" entry (file+headline org-agenda-file-task "LearnSpace")
-           "* TODO [#B] %? :@Learning:\n  %i\n"
+           "* TODO [#B] %? :@Learning:\n %T %i\n"
            :empty-lines 1)
           ("p" "ToPlay" entry (file+headline org-agenda-file-task "PlaySpace")
-           "* TODO [#B] %? :@Play:\n  %i\n"
+           "* TODO [#B] %? :@Play:\n %T %i\n"
            :empty-lines 1)
           ("b" "ToBuy" entry (file+headline org-agenda-file-task "BuySpace")
-           "* TODO [#B] %? :@Buy:\n  %i\n"
+           "* TODO [#B] %? :@Buy:\n %T %i\n"
            :empty-lines 1)
           ("r" "ToRead" entry (file+headline org-agenda-file-task "ReadSpace")
-           "* TODO [#B] %? :@Read:\n  %i\n"
+           "* TODO [#B] %? :@Read:\n %T %i\n"
            :empty-lines 1)
           ("n" "Quick note" entry (file+headline org-agenda-file-inbox "Quick notes")
-           "* %? \n  %i\n %a"
+           "* %? \n  %i\n %T %a"
            :empty-lines 1)
           ("i" "Idea" entry (file+headline org-agenda-file-task "Ideas")
-           "* %? :@Idea:\n  %i\n %a"
+           "* %? :@Idea:\n %i\n %T %a"
          :empty-lines 1)
         )
    )
