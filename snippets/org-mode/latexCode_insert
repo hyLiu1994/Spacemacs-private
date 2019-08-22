@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name:  org-mode 嵌入 latex 代码
+# key: latexCode_insert
+# --
+
+#+BEGIN_SRC latex
+$0
+#+END_SRC
+
+
