@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: latex 公式 prod 
+# key: prodl
+# --
+\prod\limits_{ $1 }^ { $2 } $0
