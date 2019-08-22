@@ -1,0 +1,23 @@
+# -*- mode: snippet -*-
+# name: 快速排序
+# key: QuickSort
+# --
+
+void QuickSort(int num[],int startPos, int endPos){
+    if (startPos>=endPos) return ;
+    int sp= startPos,ep= endPos, typ = 0;
+    while (sp<ep){
+        if (num[sp] > num[ep]){
+            typ = (typ+1)%2;
+            int c = num[sp];
+            num[sp] = num[ep];
+            num[ep] = c;
+        }
+        if (num[sp]<=num[ep]){
+            if (typ == 0) ep--;
+            else sp++;
+        }
+    }
+    QuickSort(num,startPos,sp-1);
+    QuickSort(num,sp+1,endPos);
+}
