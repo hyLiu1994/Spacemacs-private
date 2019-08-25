@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: 描述值仅为两种情况的变量
+# key: paper_model_des_variable_01
+# --
+
+${1: 变量名} is ${2: 变量描述} and ${3: 变量名} equals to ${4: 变量值} if ${5: 变量值出现的情况}, and vice versa.
+
