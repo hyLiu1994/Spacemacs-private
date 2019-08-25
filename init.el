@@ -460,7 +460,7 @@ you should place your code here."
            "* TODO [#B] %? :@Read:\n %T %i\n"
            :empty-lines 1)
           ("n" "Quick note" entry (file+headline org-agenda-file-inbox "Quick notes")
-           "* %? \n  %i\n %T %a"
+           "* %? \n  %i\n %T"
            :empty-lines 1)
           ("i" "Idea" entry (file+headline org-agenda-file-task "Ideas")
            "* %? :@Idea:\n %i\n %T %a"
