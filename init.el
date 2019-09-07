@@ -229,7 +229,7 @@ values."
    dotspacemacs-loading-progress-bar t
    ;; If non nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
-   dotspacemacs-fullscreen-at-startup t
+   dotspacemacs-fullscreen-at-startup nil
    ;; If non nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
    dotspacemacs-fullscreen-use-non-native nil
@@ -381,8 +381,8 @@ you should place your code here."
   ;;将jk等价于esc键位 
   (setq-default evil-escape-key-sequence "jk")
 
-
   (setq org-bullets-bullet-list '("🐳" "🐬" "🐡" "🐟" "🦀" "🦞"))
+
   ;;(setq-default dotspacemacs-configuration-layers
   ;;              '((org :variables org-projectile-file "~/org-notes/task.org")))
 
@@ -431,12 +431,11 @@ you should place your code here."
   (setq org-agenda-file-project (expand-file-name "project.org" org-agenda-dir))
   (setq org-agenda-files (list org-agenda-dir))
   (with-eval-after-load 'org-agenda
-
     (define-key org-agenda-mode-map (kbd "P") 'org-pomodoro)
-
     (spacemacs/set-leader-keys-for-major-mode 'org-agenda-mode
       "." 'spacemacs/org-agenda-transient-state/body)
     )
+
   ;; the %i would copy the selected text into the template
   ;;http://www.howardism.org/Technical/Emacs/journaling-org.html
   ;;add multi-file journal
