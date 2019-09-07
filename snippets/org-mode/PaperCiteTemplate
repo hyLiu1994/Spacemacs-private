@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: 论文整理模板
+# key: PaperCiteTemplate
+# --
+
+** ${1: 论文名称}
+*** ${2: 会议及出版时间}
+    $3
+*** ${4: BibTex}
+    #+BEGIN_SRC latex
+    $5
+    #+END_SRC
+$0
