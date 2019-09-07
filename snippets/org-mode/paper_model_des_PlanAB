@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 模型描述开头引入两个自己的策略
+# key: paperModelDes_PlanAB
+# --
+
+We propose two implementations of ${1: 策略类型描述} strategies under ${2: 基于什么框架} framework, i.e., ${3: 策略1名称及描述} and ${4: 策略2名称及描述}, based on both ${5: 基于相同的什么基础之上, 基础的名称与描述}.
