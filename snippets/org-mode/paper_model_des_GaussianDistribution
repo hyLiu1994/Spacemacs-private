@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: 描述Gaussian分布
+# key: paperModelDes_N_distribution
+# --
+
+where $\mathcal{N} \left( \mu, \sigma^2 \right)$ is a Gaussian distribution with mean $\mu$ and variance $\sigma^2$.
+
