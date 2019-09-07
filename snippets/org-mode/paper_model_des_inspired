@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 受到XXX的启发得到
+# key: paperModelDes_inspired
+# --
+
+Inspired by many existing works ${1: 引用论文符号}, $0
