@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: A因为xxx导致xxx问题
+# key: paperModelDesSufProDueToX
+# --
+
+${1: A} suffer from ${2: 问题} as ${3: 原因}.
