@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: 描述模型中的公式含义
-# key: paperModelDes_formulate
+# key: paperModelDesformulate
 # --
 
 The implication of this definition is that ${1: 公式描述}. $0
