@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: 句式整理模板
+# key: SentenceCollectTemplate 
+# --
+
+*** ${1: 句式快捷名称}
+**** 格式
+     $3
+**** 例句
+     $2
+**** 出处
+     $4
+
+$0
