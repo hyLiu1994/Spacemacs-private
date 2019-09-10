@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 由于XXX，XXX受到了广泛的关注
+# key: paperIntroLotsAttention
+# --
+
+Due to ${1: 原因}, ${2: 某个问题} has attracted a lot of attention.
