@@ -46,6 +46,12 @@ values."
      bibtex
      ivy
      auto-completion
+     (auto-completion :variables
+                      auto-completion-enable-help-tooltip 'manual
+                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-enable-sort-by-usage t
+                      auto-completion-private-snippets-directory "~/.spacemacs.d/snippets/"
+                      )
      better-defaults
      emacs-lisp
      git
@@ -361,6 +367,7 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here." 
 
 
+  
   ;; 修改org-mode下latex公式浏览大小
   ;; Enlarge LaTeX Fragment in Org-mode
   ;; Put this inside `dotspacemacs/user-config`
