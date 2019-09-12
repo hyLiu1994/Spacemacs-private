@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: 研究问题应用场景解释
-# key: paperIntroProUsedInLotsOfArea
-# --
-
-The problem is pervasive and it is found in many areas of ${1:领域举例,各类应用场景} and much more applications.
