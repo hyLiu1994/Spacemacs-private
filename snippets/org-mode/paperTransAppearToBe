@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 似乎是，看起来是(论文中表示转折前的肯定)
+# key: paperTransAppearToBe
+# --
+
+It appears to be $0

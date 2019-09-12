@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 随着XX发展问题被研究
+# key: paperIntroLotsStudied
+# --
+
+With the advent of ${1: 领域}, ${2: 研究内容} have been actively studied.
