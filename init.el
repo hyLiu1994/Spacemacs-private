@@ -382,8 +382,8 @@ you should place your code here."
   (global-set-key (kbd "<f7>") 'spacemacs/increase-transparency) 
   (global-set-key (kbd "<f8>") 'spacemacs/decrease-transparency) 
 
-  ;; 设置f9为avy-org-refile-as-child
-  (global-set-key (kbd "<f9>") 'avy-org-refile-as-child)
+  ;; 设置C-c m为avy-org-refile-as-child
+  (global-set-key (kbd "C-c m") 'avy-org-refile-as-child)
 
   ;;将jk等价于esc键位 
   (setq-default evil-escape-key-sequence "jk")
