@@ -448,28 +448,28 @@ you should place your code here."
   ;;add multi-file journal
   (setq org-capture-templates
         '(("t" "Todo" entry (file+headline org-agenda-file-task "Tasks")
-           "* TODO [#B] %? :@Dealing:\n %T %i\n"
+           "* TODO [#B] %? :@Dealing:\n %U %i\n"
            :empty-lines 1)
           ("w" "ToWork" entry (file+headline org-agenda-file-task "WorkSpace")
-           "* TODO [#B] %? :@Work:\n %T %i\n"
+           "* TODO [#B] %? :@Work:\n %U %i\n"
            :empty-lines 1)
           ("l" "ToLearn" entry (file+headline org-agenda-file-task "LearnSpace")
-           "* TODO [#B] %? :@Learning:\n %T %i\n"
+           "* TODO [#B] %? :@Learning:\n %U %i\n"
            :empty-lines 1)
           ("p" "ToPlay" entry (file+headline org-agenda-file-task "PlaySpace")
-           "* TODO [#B] %? :@Play:\n %T %i\n"
+           "* TODO [#B] %? :@Play:\n %U %i\n"
            :empty-lines 1)
           ("b" "ToBuy" entry (file+headline org-agenda-file-task "BuySpace")
-           "* TODO [#B] %? :@Buy:\n %T %i\n"
+           "* TODO [#B] %? :@Buy:\n %U %i\n"
            :empty-lines 1)
           ("r" "ToRead" entry (file+headline org-agenda-file-task "ReadSpace")
-           "* TODO [#B] %? :@Read:\n %T %i\n"
+           "* TODO [#B] %? :@Read:\n %U %i\n"
            :empty-lines 1)
           ("n" "Quick note" entry (file+headline org-agenda-file-inbox "Quick notes")
-           "* %? \n  %i\n %T"
+           "* %? \n  %i\n %U"
            :empty-lines 1)
           ("i" "Idea" entry (file+headline org-agenda-file-task "Ideas")
-           "* %? :@Idea:\n %i\n %T %a"
+           "* %? :@Idea:\n %i\n %U \n %a"
          :empty-lines 1)
         )
    )
