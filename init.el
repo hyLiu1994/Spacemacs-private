@@ -478,6 +478,7 @@ you should place your code here."
           ("wpd" "Dalian" tags-todo "+@Dalian")
           ("wph" "HighSpeedTrain" tags-todo "+@HighSpeedTrain")
           ("wpw" "Way" tags-todo "+@Way")
+          ("wpe" "ExPlace" tags-todo "+@ExPlace")
 
           ("wt" . "时间安排")
           ("wt1" "10分钟以内" tags-todo "+@10m")
