@@ -235,7 +235,7 @@ values."
    dotspacemacs-loading-progress-bar t
    ;; If non nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
-   dotspacemacs-fullscreen-at-startup nil
+   dotspacemacs-fullscreen-at-startup t
    ;; If non nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
    dotspacemacs-fullscreen-use-non-native nil
@@ -430,7 +430,6 @@ you should place your code here."
   (setq-default org-mobile-inbox-for-pull (expand-file-name "Inbox.org" org-agenda-dir))
   ;; Set to <your Dropbox root directory>/MobileOrg.
   (setq-default org-mobile-directory "~/Dropbox/应用/MobileOrg")
-  
 
   (setq org-agenda-file-inbox (expand-file-name "Inbox.org" org-agenda-dir))
   (setq org-agenda-file-finished (expand-file-name "finished.org" org-agenda-dir))
@@ -442,35 +441,17 @@ you should place your code here."
     (spacemacs/set-leader-keys-for-major-mode 'org-agenda-mode
       "." 'spacemacs/org-agenda-transient-state/body)
     )
-
   ;; the %i would copy the selected text into the template
   ;;http://www.howardism.org/Technical/Emacs/journaling-org.html
   ;;add multi-file journal
   (setq org-capture-templates
-        '(("t" "Todo" entry (file+headline org-agenda-file-task "Tasks")
-           "* TODO [#B] %? :@Dealing:\n %U %i\n"
-           :empty-lines 1)
-          ("w" "ToWork" entry (file+headline org-agenda-file-task "WorkSpace")
-           "* TODO [#B] %? :@Work:\n %U %i\n"
-           :empty-lines 1)
-          ("l" "ToLearn" entry (file+headline org-agenda-file-task "LearnSpace")
-           "* TODO [#B] %? :@Learning:\n %U %i\n"
-           :empty-lines 1)
-          ("p" "ToPlay" entry (file+headline org-agenda-file-task "PlaySpace")
-           "* TODO [#B] %? :@Play:\n %U %i\n"
-           :empty-lines 1)
-          ("b" "ToBuy" entry (file+headline org-agenda-file-task "BuySpace")
-           "* TODO [#B] %? :@Buy:\n %U %i\n"
-           :empty-lines 1)
-          ("r" "ToRead" entry (file+headline org-agenda-file-task "ReadSpace")
-           "* TODO [#B] %? :@Read:\n %U %i\n"
-           :empty-lines 1)
-          ("n" "Quick note" entry (file+headline org-agenda-file-inbox "Quick notes")
+        '(
+          ("n" "Quick note" entry(file+headline org-agenda-file-inbox "Quick notes")
            "* %? \n  %i\n %U"
            :empty-lines 1)
-          ("i" "Idea" entry (file+headline org-agenda-file-task "Ideas")
+          ("i" "Idea" entry (file+headline org-agenda-file-inbox "Ideas")
            "* %? :@Idea:\n %i\n %U \n %a"
-         :empty-lines 1)
+           :empty-lines 1)
         )
    )
 
@@ -481,7 +462,6 @@ you should place your code here."
                                    ("~/org-notes/trash.org" :level . 1)
                                    ("~/org-notes/someday.org" :level . 1)
                                    )))
-
   ;;An entry without a cookie is treated just like priority ' B '.
   ;;So when create new task, they are default 重要且紧急
   ;;"-Weekly-Monthly-Daily+PRIORITY=\"B\""
@@ -489,9 +469,22 @@ you should place your code here."
         '(
           ("w" . "任务安排")
           ("wa" "重要且紧急的任务" tags-todo "+PRIORITY=\"A\"")
-          ("wb" "重要且不紧急的任务" tags-todo "+PRIORITY=\"B\"")
-          ("wc" "不重要且紧急的任务" tags-todo "+PRIORITY=\"C\"")
-          ("wd" "未确定优先级及未详细规划的任务" tags-todo "+PRIORITY=\"D\"")
+
+          ("wp" . "地点安排")
+          ("wpl" "Lab" tags-todo "+@Lab")
+          ("wpi" "Internet" tags-todo "+@Internet")
+          ("wpo" "OutDoor" tags-todo "+@OutDoor")
+          ("wpc" "Computer" tags-todo "+@Computer")
+          ("wpd" "Dalian" tags-todo "+@Dalian")
+          ("wph" "HighSpeedTrain" tags-todo "+@HighSpeedTrain")
+          ("wpw" "Way" tags-todo "+@Way")
+
+          ("wt" . "时间安排")
+          ("wt1" "10分钟以内" tags-todo "+@10m")
+          ("wt2" "30分钟以内" tags-todo "+@30m")
+          ("wt3" "1小时以内" tags-todo "+@60m")
+          ("wt4" "1小时30分钟以内" tags-todo "+@90m")
+          ("wt5" "2小时以内" tags-todo "+@120m")
           ("W" "Weekly Review"
            ((stuck "") ;; review stuck projects as designated by org-stuck-projects
             (tags-todo "PROJECT") ;; review all projects (assuming you use todo keywords to designate projects)
