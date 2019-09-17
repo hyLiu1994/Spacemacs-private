@@ -366,7 +366,6 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here." 
 
-
   
   ;; 修改org-mode下latex公式浏览大小
   ;; Enlarge LaTeX Fragment in Org-mode
@@ -384,6 +383,12 @@ you should place your code here."
 
   ;; 设置C-c m为avy-org-refile-as-child
   (global-set-key (kbd "C-c m") 'avy-org-refile-as-child)
+
+  ;; 设置打开当前buffer的文件夹的快捷方式
+  (global-set-key (kbd "C-c o") (kbd "M-! open SPC ./"))
+
+  ;; 设置打开当前buffer的terminal的快捷方式
+  (global-set-key (kbd "C-c t") (kbd "M-! open SPC -a SPC terminal SPC  ./"))
 
   ;;将jk等价于esc键位 
   (setq-default evil-escape-key-sequence "jk")
@@ -479,6 +484,7 @@ you should place your code here."
           ("wph" "HighSpeedTrain" tags-todo "+@HighSpeedTrain")
           ("wpw" "Way" tags-todo "+@Way")
           ("wpe" "ExPlace" tags-todo "+@ExPlace")
+          ("wpp" "Phone" tags-todo "+@Phone")
 
           ("wt" . "时间安排")
           ("wt1" "10分钟以内" tags-todo "+@10m")
@@ -529,8 +535,6 @@ you should place your code here."
                                 "xelatex -interaction nonstopmode %f"))
   (setq org-latex-default-packages-alist
         (remove '("AUTO" "inputenc" t) org-latex-default-packages-alist))
-  
-
 
 )
 
