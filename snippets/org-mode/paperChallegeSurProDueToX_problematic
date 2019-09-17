@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 因为XXX,上面提到的挑战在（问题）尤为明显
+# key: paperChallegeSurProDueToX_problematic
+# --
+
+This difficulty is particularly problematic in the case of ${1: 研究问题}, as ${2:原因}.
