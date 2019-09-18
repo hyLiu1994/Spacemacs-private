@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 目标数据包含哪些信息说明
+# key: paperDataDesInforType
+# --
+
+Nowadays, ${1: 数据类型} data which refers to data with ${2: image, text and interactive information} is ubiquitous.
