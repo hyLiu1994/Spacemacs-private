@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: XXX是某问题(模型)的关键组件+XXX描述
+# key: paperModelDesComponentOfProblem
+# --
+
+One key component of ${1: 问题或模型} is ${2: XXX名称} that ${3: XXX的描述或作用}.

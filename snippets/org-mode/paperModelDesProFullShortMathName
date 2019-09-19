@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 解释问题全程、简称、数学符号
+# key: paperModelDesProFullShortMathName
+# --
+
+${1: 问题全程} is denoted as ${2: 问题简称}. In the following, if there is no ambiguity, we write ${3: 问题简称} as ${4: 问题数学符} for simplicity.
