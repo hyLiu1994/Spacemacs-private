@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 解释经典认知诊断模型
+# key: paperIntroModelEducationCD
+# --
+
+${1:MODEL} is a classical cognitive diagnosis method which can provide interpretable parameters (i.e., student latent trait, question discrimination and difficulty) for analyzing student performance.

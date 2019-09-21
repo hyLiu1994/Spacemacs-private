@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 从信息数量角度介绍模型劣势
+# key: paperIntroModelDisadvantaged_information
+# --
+
+${1: 模型名称} can only exploit ${2: 考虑到的信息}, and ignores ${3: 未考虑到的信息}.

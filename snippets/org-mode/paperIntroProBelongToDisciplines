@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: 研究问题隶属的上属问题
-# key: paperIntroProBelongToDisciplines
-# --
-
-${1: 研究问题} is a fundamental problem in many disciplines like ${2: 研究问题隶属的学科}, among others.

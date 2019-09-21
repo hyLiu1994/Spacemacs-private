@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 为了做XXX(完成某个任务)第一步需要做XXX
+# key: paperIntroModelProcessFirst
+# --
+
+In order to ${1: 某个任务目标}, the first step could be ${2: 具体行动}.

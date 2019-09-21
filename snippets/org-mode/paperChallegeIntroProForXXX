@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 解释问题(挑战)并说明问题作用
+# key: paperChallegeIntroProForXXX
+# --
+
+There is an issue that ${1: 解释问题或挑战}, in order to ${2: 解决问题做什么}
