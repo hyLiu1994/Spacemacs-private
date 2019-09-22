@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 模型除了使用某类信息不再使用其他信息
+# key: paperIntroModelUseNoInformationBut
+# --
+
+${1: 方法/模型名称} use${2:s} no ${3: 未使用的信息} beyond ${4: 使用的信息}. 

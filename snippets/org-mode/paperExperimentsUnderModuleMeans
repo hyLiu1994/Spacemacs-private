@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 通过调整模型各个模块，来理解各个部分的作用。
+# key: paperExperimentsUnderModuleMeans
+# --
+
+Our model had several ${1: module/components} that we could tweak these ${2: module/components} to understand their impact on the overall performance.

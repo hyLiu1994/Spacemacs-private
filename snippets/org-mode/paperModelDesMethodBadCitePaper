@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 引用论文证明现有方法是不够好的
+# key: paperModelDesMethodBadCitePaper
+# --
+
+By the way, ${1: 引用论文} also proves that directly applying existing methods of ${2: 领域/方法描述} to ${3: 任务描述说明} will not perform well.

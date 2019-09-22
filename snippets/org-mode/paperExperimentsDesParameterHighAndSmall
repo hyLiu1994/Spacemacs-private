@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 描述参数过高或过低带来的影响
+# key: paperExperimentsDesParameterHighAndSmall
+# --
+
+Using higher ${1: 参数名称} negatively impacted ${2: 参数过高带来的影响}, while smaller ${3: 参数名称} led to ${4: 参数过低带来的影响}.
