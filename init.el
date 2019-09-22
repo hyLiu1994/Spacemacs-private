@@ -518,10 +518,14 @@ you should place your code here."
      (calc . t)
      (sql . t)
      ))
-  ;; ~~变为红色
+  ;; ~~ ==变为红色
   (setq org-emphasis-alist
         (cons '("~" '(:emphasis t :foreground "VioletRed3"))
               (delete* "~" org-emphasis-alist :key 'car :test 'equal)))
+  (setq org-emphasis-alist
+        (cons '("=" '(:emphasis t :foreground "VioletRed3"))
+              (delete* "=" org-emphasis-alist :key 'car :test 'equal)))
+
   ;;自动追踪子任务完成情况更改TODO
   (defun org-summary-todo (n-done n-not-done)
     "Switch entry to DONE when all subentries are done, to TODO otherwise."
