@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 某个问题影响了XXX的发展
+# key: paperIntroBackgroundProEffectAppDevelop
+# --
+
+${1: 问题名称与描述} has seriously affected ${: 应用} development. 

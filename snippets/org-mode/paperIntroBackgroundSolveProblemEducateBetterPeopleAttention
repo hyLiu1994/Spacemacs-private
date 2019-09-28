@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 解决上述问题使XXX带来更多的教育收益，引起人们关注
+# key: paperIntroBackgroundSolveProblemEducateBetterPeopleAttention
+# --
+
+How to solve these problems, so that ${1: 研究问题} bring more educational benefits is a hot problem that ${2: 关注的人或组织,学者，老师，教育机构等} pay close attention to.

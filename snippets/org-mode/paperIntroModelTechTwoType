@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 在具体实现中，问题分为两类。
+# key: paperIntroModelTechTwoType
+# --
+
+In the specific implementation, ${1: 问题名称} is divided into two types.

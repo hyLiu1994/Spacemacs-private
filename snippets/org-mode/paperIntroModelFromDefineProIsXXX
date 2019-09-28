@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 从问题定义来讲, A问题是典型的B问题
+# key: paperIntroModelFromDefineProIsXXX
+# --
+
+From the definition of the problem, ${1: 问题名称} problem is a typical ${2: 问题类型} problem. 

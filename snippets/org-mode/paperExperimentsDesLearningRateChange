@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 描述学习率衰减
+# key: paperExperimentsDesLearningRateChange
+# --
+
+The learning rate is annealed by ${1: 递减百分比}% every ${2: 迭代次数} iterations.

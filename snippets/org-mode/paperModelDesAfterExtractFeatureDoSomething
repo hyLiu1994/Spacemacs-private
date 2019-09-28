@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: 特征被提取后，被输入到XXX
+# key: paperModelDesAfterExtractFeatureDoSomething
+# --
+
+After a large number of features have been extracted from these data, they will be fed into ${1: 模型中某个模块}.
+
