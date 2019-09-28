@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 结合上面得到的A和B推出公式C，公式如下...
+# key: paperModelDesFormulateFromABToC
+# --
+
+Since we have also obtained ${1: 前面公式得到的结果}, we further incorporate them into the ${2: 下面引出的公式称呼} as below.

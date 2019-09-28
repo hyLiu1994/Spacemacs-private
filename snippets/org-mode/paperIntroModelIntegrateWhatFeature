@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 模型方法通过间接的方式整合特征
+# key: paperIntroModelIntegrateWhatFeature
+# --
+
+${1: 方法或模型名称} provides an easy means to represent and combine the ${2: 特征1}, ${3: 特征2} and ${4: 特征3} features in a concise manner.

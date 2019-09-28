@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 描述一个问题本就困难,又因为某些新的需求出现而更加困难(雪上加霜)。
+# key: paperChallengeProMoreDifficultDueToXXX
+# --
+
+${1: 问题名称} is still a difficult problem, whose inherent difficulty is compounded by the emergence of ${2: 新的需求}.

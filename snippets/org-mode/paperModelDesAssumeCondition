@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 不失一般性的，我们假设...
+# key: paperModelDesAssumeCondition
+# --
+
+Without loss of generality, we assume $0.

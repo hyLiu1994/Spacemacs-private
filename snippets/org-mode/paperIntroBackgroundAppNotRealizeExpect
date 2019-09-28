@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 应用所拥有的潜力没有被完全实现
+# key: paperIntroBackgroundAppNotRealizeExpect
+# --
+
+Nevertheless, despite all this potential, ${1: 应用名称} have so far failed to produce evidence that this potential is being realized in the current instantiation of ${2: 应用名称}.

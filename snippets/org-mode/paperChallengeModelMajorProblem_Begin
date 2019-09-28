@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 虽然在一定程度上取得了性能上的改进，但是方法存在几个主要问题
+# key: paperChallengeModelMajorProblem_Begin
+# --
+
+Although ${1: 提出模型的名称} have achieved performance improvement to some extent, there are ${2: 问题数量} major problems for these ${3: 模型更详细的名称}.

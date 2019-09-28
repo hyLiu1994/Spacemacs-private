@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 某个问题可以形式化表示为XXX公式
+# key: paperModelDesProblemShowAsFormula
+# --
+
+The problem of ${1: 问题描述} can be formally described as solving the ${2: 公式描述+公式}.

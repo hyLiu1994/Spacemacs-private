@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 基于某种直觉构建模型
+# key: paperModelDesCreateModelFollowIntuition
+# --
+
+We formalize this intuition, and construct ${1: 模型描述} capturing ${2: 信息或者特征}.

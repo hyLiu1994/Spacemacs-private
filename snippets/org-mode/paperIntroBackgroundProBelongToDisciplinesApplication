@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: 研究问题隶属的上属问题/应用场景
-# key: paperIntroProBelongToDisciplinesApplication
+# key: paperIntroBackgroundProBelongToDisciplinesApplication
 # --
 
 ${1: 研究问题} is a fundamental problem ${2: and crucial task} in many ${3: disciplines/application} like ${4: 研究问题隶属的学科/应用场景}, among others.

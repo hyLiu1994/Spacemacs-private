@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 在A数量的数据集上大量的实验证明，B模型可以更有效的完成任务
+# key: paperIntroModelLastSentence
+# --
+
+Extensive experiments on ${1:A数量} real-world datasets prove that ${2:B模型} can ${3: 某个任务, 如 model student learning} more effectively.

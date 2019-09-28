@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: 从A中抽取的到的B，我们通过合适的方式利用B对C进行建模
+# key: paperModelDesRelation_BfromA_CfromB
+# --
+
+With the ${1:A} extracted from ${2:B},in this subsection, we incorporate ${3:B} into ${4:C} in a more reasonable way.
+

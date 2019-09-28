@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 使用方法A实现目的B的尝试还很少
+# key: paperChallengeFewMethodDoSomething
+# --
+
+To our knowledge, there are few attempts which ${1: 采用方法A} to ${2: 完成目的B}.

@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: 总所周知，A比B更难解决
-# key: paperChallegeADifficultB
+# key: paperChallengeADifficultB
 # --
 
 As is well-known, ${1: A问题} are in general much more computationally difficult to solve than ${2: B问题}.

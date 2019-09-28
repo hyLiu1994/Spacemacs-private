@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: 随着工业界和学术界的教育资源发展迅速，某个广泛研究已迅速进入媒体，学术出版物和公众心目中的重要位置。
+# key: paperIntroBackgroundAreaImportant_Influence
+# --
+
+With the recent boom in development of educational resources both in industry and academia, ${1: 某个大的问题，如MOOC、智慧教育} have rapidly moved into a place of prominence in the media, in scholarly publications, and in the mind of the public.
+

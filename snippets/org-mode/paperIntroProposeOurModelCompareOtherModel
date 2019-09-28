@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 提出自己方法解决XXX问题,并对比其他方法
+# key: paperIntroProposeOurModelCompareOtherModel
+# --
+
+To deal with ${1: 为了解决某种问题或数据}, this study illustrates the effectiveness of ${2: 方法解释说明} to build more robust and accurate prediction models than ${3: 对比方法}.

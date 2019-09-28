@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: 基于XXX提出自己的模型
-# key: paperIntroProposeModel
+# key: paperIntroProposeModelBasedOnSomeMethod
 # --
 
 Since ${1: 基于的模型} has been proved successful in many ${2: 任务或领域}, we propose a ${3: model/framework} called ${4: 自己模型名称} by ${5: 如何基于模型改进的} in order to ${6: 改进的目的是什么}.

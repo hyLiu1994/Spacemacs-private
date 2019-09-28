@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: A参数被初始化为B维度的词嵌入通过C方法
+# key: paperModelDesParameterInitEmbedding
+# --
+
+${1:A参数} is initialized with a ${2:B维度}$-dimensional ${3:嵌入名称，如word} embedding with ${4:C方法} method

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 当前大多数此类模型是针对A情况的，对B情况不有效
+# key: paperChallengeMostModelConsiderAndNotConsider
+# --
+
+However, most of the existing ${1: XXX methods} mainly focus on ${1: 场景A}, which are not able to effectively model ${2: 场景B}. 

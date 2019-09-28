@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 从两个角度进行模型的评价
+# key: paperExperimentsEvaluationMetrics
+# --
+
+We evaluate the performance of ${1:A模型} from two perspectives, ${2: 角度描述} perspective : ${3: 衡量指标, 如RMSE (Root Mean Square)}, and ${3: 角度描述} perspective : ${4: 衡量指标, 如AUC (Area Under ROC)}.

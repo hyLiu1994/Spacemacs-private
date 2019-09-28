@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: 某种技术可以分为两类：A和B。
-# key: paperIntroTechTwoGroup
+# key: paperIntroModelTechTwoGroup
 # --
 
 Generally, ${1: 某种技术和问题} can be classified into two groups: ${2: A} and ${3: B}.

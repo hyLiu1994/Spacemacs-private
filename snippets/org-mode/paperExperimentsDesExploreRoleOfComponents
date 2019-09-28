@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 通过移除组件探究组件的作用
+# key: paperExperimentsDesExploreRoleOfComponents
+# --
+
+We ablate and compare our various model components, which leads to some key findings about contribution and effectiveness of ${1: 组件名称}, ${2: 组件名称} and ${3: 组件名称}.

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: A模型可以通过以下的公式做B事情
+# key: paperModelDesDoSomethingByUsingFormula
+# --
+
+${1:A模型} can ${2:B事情} by ${3: 公式类型, 如logistic-like} ${4: A模型公式} formula which is defined as follow

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 我们的模型在某些方面优秀于其他的模型
+# key: paperIntroModelOurBetterInSomeWay
+# --
+
+Our model compares favorably to ${1: 其他模型描述} in ${2: 具体方面}.

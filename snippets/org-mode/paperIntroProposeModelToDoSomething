@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: 提出某种方法概念模型去解决问题
+# key: paperIntroProposeModelToDoSomething
+# --
+
+In this paper, we formally propose ${1: 模型方法或概念名称} concept to handle this condition.
+

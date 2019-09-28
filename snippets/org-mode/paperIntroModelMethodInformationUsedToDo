@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 某种模型或方法被广泛用于解决该问题。
+# key: paperIntroModelMethodInformationUsedToDo
+# --
+
+${1: 模型、信息或方法} are widely used for solving ${2: 问题描述}.

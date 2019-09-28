@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 某个模型可以解决任务，其中某个方法可以提高效率
+# key: paperIntroModelSoluProbMethodImprovePerf
+# --
+
+${1: 模型名称} are the corresponding solution to this kind of tasks, and ${2: 方法名称} can obtain the state-of-the art performance.

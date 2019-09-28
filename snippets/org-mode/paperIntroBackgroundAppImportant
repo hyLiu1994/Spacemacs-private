@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: 介绍某个应用场景的价值
+# key: paperIntroBackgroundAppImportant
+# --
+
+${1: 某个应用场景,如慕课} have recently taken center stage in discussions surrounding ${2: 领域,如在线教育领域}.
+

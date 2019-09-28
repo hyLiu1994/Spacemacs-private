@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 通过...，新的方法被提出，简称为XXX
+# key: paperIntroProposeModelBySomeWay
+# --
+
+By ${1: 某种方式}, this work presents a novel ${1: 方法全称}, called ${2: 方法简称} for short.

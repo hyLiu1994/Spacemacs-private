@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: 研究问题被应用于广泛的应用场景中
-# key: paperIntroProUsedInLotsOfArea
+# key: paperIntroBackgroundProUsedInLotsOfArea
 # --
 
 The problem is pervasive and it is found in many areas of ${1:领域举例,各类应用场景} and much more applications.

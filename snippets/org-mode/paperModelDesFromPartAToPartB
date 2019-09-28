@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 在从A部分获得A结果之后，B部分旨在探测B结果
+# key: paperModelDesFromPartAToPartB
+# --
+
+After obtaining ${1:A结果} from ${2:A部分}, ${3:B部分} aims at detecting ${4:B结果}

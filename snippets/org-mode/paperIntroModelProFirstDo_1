@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: (目标)的第一步(我们开发技术做什么)，他们将成为(任务的)的基石
-# key: paperIntroProFirstDo
+# key: paperIntroModelProFirstDo_1
 # --
 
 As a first step towards ${1:目标} that will form the backbone of ${2:某个任务或科学问题}, we develop a novel technique to ${3:做什么}.
