@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: 句式整理模板Level4
+# key: SentenceCollectTemplate_4Stars 
+# --
+
+**** ${1: 句式快捷名称}
+***** 解释
+$6
+***** 格式
+$3
+***** 例句
+$2
+***** 出处
+$4
+***** 贡献者
+$5
+$0

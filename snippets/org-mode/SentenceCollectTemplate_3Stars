@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: 句式整理模板Level3
+# key: SentenceCollectTemplate_3Stars 
+# --
+
+*** ${1: 句式快捷名称}
+**** 解释
+$6
+**** 格式
+$3
+**** 例句
+$2
+**** 出处
+$4
+**** 贡献者
+$5
+$0
