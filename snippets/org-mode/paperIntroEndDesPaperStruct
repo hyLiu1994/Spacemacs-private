@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 描述文章结构, 二三四章内容描述
+# key: paperIntroEndDesPaperStruct
+# --
+
+The remainder of the present paper is organized as follows. In Section 2, we discuss ${2: 第二章内容}. In Section 3, we introduce ${3: 第三章内容}. In Section 4, we present ${4: 第四章内容}.

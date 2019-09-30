@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 文章结尾描述FutureWork模板
+# key: paperConcludsionFutureWork
+# --
+
+In the future, we will extend the proposed method to ${1: 被扩展到的领域、数据类型等}. Moreover, we will focus on the developement of a method by which to ${2: 新的模型想解决的问题}. Furthermore, we intend to ${3: 除此以为想解决的问题}.

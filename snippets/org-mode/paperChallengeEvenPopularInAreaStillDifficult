@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 尽管XXX非常活跃，但是XXX依旧是个挑战
+# key: paperChallengeEvenPopularInAreaStillDifficult
+# --
+
+Even though ${1: 某个问题或方法} has been an active research area recently, modeling ${2: 某个任务} has proven to be a challenging task.

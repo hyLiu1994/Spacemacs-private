@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 提出已知假设
+# key: paperModelDesAssumeHasBeenKnowed
+# --
+
+It has often been taken as a working assumption that ${1: 假设描述}.

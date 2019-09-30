@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 简要描述我们的模型以及研究的维度
+# key: paperAbstractDesOurModelResearchInTwoDemensions
+# --
+
+In this paper we develop a novel ${1: 方法名称或描述} method that ${2: 方法详细描述} and advances research along two demensions: the ${3: 维度1} and the ${4: 维度2}.

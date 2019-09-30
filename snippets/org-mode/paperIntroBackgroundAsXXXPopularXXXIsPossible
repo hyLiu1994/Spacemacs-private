@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: 随着XXX的日益流行，XXX是有希望实现的。
+# key: paperIntroBackgroundAsXXXPopularXXXIsPossible
+# --
+
+As ${1: 研究背景, MOOCs, 智慧教育等} become increasingly popular, it is promising to ${2: 某个任务}. 
+

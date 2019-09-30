@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 通过观察到的现象扩充定义
+# key: paperAbstractExtendDefineByObserve
+# --
+
+We extend traditional definitions of ${1: 问题名称} by building on the observation that ${2: 现象描述}.

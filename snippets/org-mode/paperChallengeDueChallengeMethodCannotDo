@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name:由于存在XXX的问题，现有方法无法有效地做XXX 
+# key: paperChallengeDueChallengeMethodCannotDo
+# --
+
+Suffering from ${1: 问题描述}, existing methods can not effectively ${2: 完成某个任务或效果}.
+

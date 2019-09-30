@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 由于某个挑战或现象的存在，不能使用现有/朴素的方法做某事
+# key: paperChallengeDueChallengeCannotDo
+# --
+
+${1: 挑战或现象的具体描述}, making it infeasible to ${2: 使用一些简单的朴素的现有的方法做某事}.

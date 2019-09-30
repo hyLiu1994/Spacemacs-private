@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 由于XXX很大的发展,人们对XXX投入了大量的精力
+# key: paperIntroBackgroundAppLotsAttention_DueToDevelop
+# --
+
+As part of the recent surge of research on ${1: 如机器学习、智慧教育等}, a considerable amount of attention has been devoted to the ${2: 研究问题}.

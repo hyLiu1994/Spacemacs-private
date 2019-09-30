@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 相关工作起始句，回顾现有工作与研究
+# key: paperRelatedWorkReviewResearchAndBackground_Begin
+# --
+
+In this section, we review research related to ${1: 研究问题} as well as background information on ${2: 研究问题}.

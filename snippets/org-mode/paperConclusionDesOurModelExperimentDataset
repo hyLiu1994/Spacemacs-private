@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 文章结论模板，包括模型描述实验与数据集
+# key: paperConclusionDesOurModelExperimentDataset
+# --
+
+In the present paper, we introduced a new ${1: 模型名称及描述}. We found that ${2: 最终我们模型的结果}. We examined the proposed method using two real-world datasets. The improvements in performance metrics indicated by the experimental results verify the effectiveness of the newly proposed ${3: 模型名称}.

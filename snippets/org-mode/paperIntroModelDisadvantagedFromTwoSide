@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 描述方法的两个缺点
+# key: paperIntroModelDisadvantagedFromTwoSide
+# --
+
+One downside of these methods is ${1: 缺点1描述}. Another downside is ${2: 缺点2描述}.

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 用来描述学生的反应情况数量及种类
+# key: paperModelDesResponsePattern
+# --
+
+In this case, we assume there are ${1:数量} types of response patterns, i.e., ${2:情况}.
