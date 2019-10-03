@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: 将A偏序先验引入到B中,以做***事（如提高解释性的力度）
+# key: paperModelDesformulatePartialOrderPrior
+# --
+
+We incorporate our proposed partial order prior of ${1:A} into ${2:B} to improve the explanatory power.
+

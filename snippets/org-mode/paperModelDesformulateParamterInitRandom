@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: 通过随机初始化所有参数作为初始值
+# key: paperModelDesformulateParamterInitRandom
+# --
+
+we randomize all the parameters as the initial values. 
+

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 我们在预定的区间内对每个参数进行均匀随机抽样
+# key: paperModelDesformulateParamterSample
+# --
+
+we draw a uniformly random sample of each parameter within a predefined interval

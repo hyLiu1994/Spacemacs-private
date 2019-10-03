@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: (提出挑战)现有的方法很少能解决以下挑战
+# key: paperChallengeProposeChallenge
+# --
+
+Few of the existing approaches can address the following challenge: ${0:挑战}

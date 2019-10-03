@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 比较我们的A模型和基准方法的性能，在B任务上
+# key: paperExperimentsCompareBaselineModelWithOurModel
+# --
+
+we compare the performance of our ${1:A模型} against baseline approaches on ${2:B任务}tasks.
