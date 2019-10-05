@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 使用A算法不能保证模型收敛
+# key: paperModelDesUseAlgorithmCannotConverge
+# --
+
+${1:A算法} is not guaranteed to converge

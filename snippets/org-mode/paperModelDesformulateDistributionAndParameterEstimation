@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 描述满足的分布并用参数估计方法估计参数
+# key: paperModelDesformulateDistributionAndParameterEstimation
+# --
+
+Here ${6:分布符号} , i.e the ${1:作用}, is assumed to follow the ${2:分布类型} distribution,${3:分布表达式}, where ${4:参数} can be learned by ${5:参数估计方法}

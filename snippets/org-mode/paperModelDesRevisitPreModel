@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: 我们回顾之前介绍过的内容
+# key: paperModelDesRevisitPreModel
+# --
+
+We revisit ${0:之前的介绍过的内容}.
+

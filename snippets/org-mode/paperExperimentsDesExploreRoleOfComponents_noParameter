@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 进行控制量的研究(ablation study)量化模型各个部分的作用
+# key: paperExperimentsDesExploreRoleOfComponents_noParameter
+# --
+
+To better quantify the contribution of the different components of our model, we conduct some ablation study.
