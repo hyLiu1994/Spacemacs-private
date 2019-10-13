@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 我们使用交叉验证的方法调整模型的超参数
+# key: paperExperimentsHyperparametersTuneByCross
+# --
+
+we use ${1: 可以省略，或者如4-fold} cross-validation to tune ${2: 模型名称} hyperparameters.

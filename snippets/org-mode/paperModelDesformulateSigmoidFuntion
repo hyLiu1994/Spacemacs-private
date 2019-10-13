@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 描述sigmoid函数的作用：将每个值控制在0-1范围内
+# key: paperModelDesformulateSigmoidFuntion
+# --
+
+Sigmoid function is conducted on ${1:值} to restrict the range of each element to $(0, 1)$.

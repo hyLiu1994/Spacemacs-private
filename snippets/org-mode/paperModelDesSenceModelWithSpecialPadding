@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 我们为句子添加特殊的padding在开头与结尾.
+# key: paperModelDesSenceModelWithSpecialPadding
+# --
+
+We augment the sentence with a special padding at the begining and the end.

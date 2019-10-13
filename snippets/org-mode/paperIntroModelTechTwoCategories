@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: XXX 分为两大类
+# key: paperIntroModelTechTwoCategories
+# --
+
+Most of them fall into two broad categories: ${1: 具体类别描述}.
+

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: A的概率在B情况下单调递增
+# key: paperModelDesProbabilityIncreaseOnSituation
+# --
+
+The probability of ${1:A事情} is monotonically increasing at ${2:B情况}

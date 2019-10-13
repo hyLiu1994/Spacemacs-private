@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: 通用句式：介绍认知诊断
+# key: paperIntroModelEducationCD_General
+# --
+
+Given students’ response logs $R$ and the Q-matrix $Q$, the goal of our cognitive diagnosis task is to mine students’ proficiency on knowledge concepts through the student performance prediction process.
+

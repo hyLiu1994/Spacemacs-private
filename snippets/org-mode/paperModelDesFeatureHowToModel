@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 描述算法A的作用以及如何Model feature
+# key: paperModelDesFeatureHowToModel
+# --
+
+The ${1:A算法} algorithm was recently suggested for ${2:作用, 解决某种问题}. It uses ${3:Model Feature的方法} regression to model features, which can be ${4:描述特征类型}

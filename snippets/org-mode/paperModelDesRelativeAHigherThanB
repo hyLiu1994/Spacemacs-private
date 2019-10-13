@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: 我们认为A比B的相关性更强
+# key: paperModelDesRelativeAHigherThanB
+# --
+
+So we consider ${1:A} are more relative than ${2:B}.
+

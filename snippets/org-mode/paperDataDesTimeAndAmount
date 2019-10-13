@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: 描述数据时间范围及数据总量
+# key: paperDataDesTimeAndAmount
+# --
+
+Our dataset was collected during ${1:时间开始} to ${2:时间结束}. It consists of ${3:数据总量} observations from ${4:学生总量} students.
+

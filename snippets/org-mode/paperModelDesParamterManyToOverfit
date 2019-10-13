@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: 模型参数过多，很容易出现过拟合
+# key: paperModelDesParamterManyToOverfit
+# --
+
+It may be because ${1:模型} have many parameters to estimate, so they are prone to overfitting
+
+

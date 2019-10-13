@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: 描述学习率的衰减方式
+# key: paperExperimentsDesLearningRateChange_2
+# --
+
+we use a learning rate schedule that decrease the learning rate ${1: 学习率符号} according to the training epoch ${2: 迭代次数符号}. The learning rate for epoch ${3: 迭代次数符号}, ${4: 学习率符号}, is computed using the equation: ${5: 学习率计算公式}.
+

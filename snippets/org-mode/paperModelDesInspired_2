@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: 描述所提出的模型收到来自...的启发
+# key: paperModelDesInspired_2 
+# --
+
+our model draws inspiration both from ${1: 方法1 + 引用论文} and ${2: 方法2 + 引用论文}.
+
