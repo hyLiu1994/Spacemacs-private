@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 在受到A的启发，我们引入了B,将他和C结合在一起解决了D
+# key: paperIntroProposeImportBwithCToSolveDMotivatedByA
+# --
+
+Motivated by ${1: A工作}, we import ${2: B模型} and couple it with ${3: C模型方法} to solve ${4:D问题}.

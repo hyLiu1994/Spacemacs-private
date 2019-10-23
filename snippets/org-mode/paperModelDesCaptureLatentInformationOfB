@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: 描述神经网络可以提取隐藏信息
+# key: paperModelDesCaptureLatentInformationOfB
+# --
+
+${1:A模型} can deeply capture the latent information of ${2:B}

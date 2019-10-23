@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: 之前的方法由于XXX原因，导致性能下降
+# key: paperIntroModelMethodDecreasePerformanceDueTo
+# --
+
+Previous ${1: 之前方法名称} methods are faced with the problems of ${2: 问题描述}, which substantially decrease the performance of ${3: 性能描述}.
+
