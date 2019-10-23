@@ -332,6 +332,25 @@ before packages are loaded. If you are unsure, you should try in setting them in
                                       ;;gotham
                                       ))
   
+  ;;(setq configuration-layer--elpa-archives
+  ;;        ("org-cn"   . "http://elpa.emacs-china.org/org/")
+  ;;        ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/"))
+  ;;(setq configuration-layer--elpa-archives
+  ;;      '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
+  ;;        ("org-cn"   . "http://elpa.emacs-china.org/org/")
+  ;;        ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
+
+  ;; melpa china mirrors
+  (setq configuration-layer--elpa-archives
+      '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+        ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+        ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
+  
+  ;;(setq url-proxy-services '(("no_proxy" . "127.0.0.1")
+  ;;                         ("SOCKS5" . "127.0.0.1:1080")
+  ;;                         ("SOCKS5" . "127.0.0.1:1080")
+  ;;                         ))
+
   (setq-default dotspacemacs-configuration-layers
                 '((org :variables org-projectile-file "~/org-notes/task.org")))
   (setq-default dotspacemacs-configuration-layers
@@ -352,11 +371,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (set-fontset-font t 'han      (font-spec :family "STkaiti"))
   (set-fontset-font t 'cjk-misc (font-spec :family "STkaiti"))
   ;; 表格等宽 End
-  ;;;;; Emoji
-  (set-fontset-font t 'symbol (font-spec :family "Apple Color Emoji")
-                    nil 'prepend)
-
-  )
+)
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code. 
@@ -367,6 +382,13 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here." 
 
   
+  ;;;;; Emoji
+  (if (version< "27.0" emacs-version)
+      (set-fontset-font
+       "fontset-default" 'unicode "Apple Color Emoji" nil 'prepend)
+    (set-fontset-font
+     t 'symbol (font-spec :family "Apple Color Emoji") nil 'prepend))
+
   ;; 修改org-mode下latex公式浏览大小
   ;; Enlarge LaTeX Fragment in Org-mode
   ;; Put this inside `dotspacemacs/user-config`
@@ -393,7 +415,7 @@ you should place your code here."
   ;;将jk等价于esc键位 
   (setq-default evil-escape-key-sequence "jk")
 
-  (setq org-bullets-bullet-list '("🐳" "🐬" "🐡" "🐟" "🦀" "🦞"))
+  ;;(setq org-bullets-bullet-list '("🐳" "🐬" "🐡" "🐟" "🦀" "🦞"))
 
   ;;(setq-default dotspacemacs-configuration-layers
   ;;              '((org :variables org-projectile-file "~/org-notes/task.org")))
@@ -402,20 +424,6 @@ you should place your code here."
   (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
 
 
-  ;;(setq configuration-layer--elpa-archives
-  ;;        ("org-cn"   . "http://elpa.emacs-china.org/org/")
-  ;;        ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/"))
-
-
-  ;; melpa china mirrors
-  (setq configuration-layer--elpa-archives
-      '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-        ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
-        ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
-  ;;(setq url-proxy-services '(("no_proxy" . "127.0.0.1")
-  ;;                         ("http" . "127.0.0.1:1087")
-  ;;                         ("https" . "127.0.0.1:1087")
-  ;;                         ))
   (setq tramp-ssh-controlmaster-options
         "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
 
