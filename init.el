@@ -45,6 +45,7 @@ values."
      latex
      bibtex
      ivy
+     helm
      auto-completion
      (auto-completion :variables
                       auto-completion-enable-help-tooltip 'manual
@@ -52,7 +53,9 @@ values."
                       auto-completion-enable-sort-by-usage t
                       auto-completion-private-snippets-directory "~/.spacemacs.d/snippets/"
                       )
-     better-defaults
+     (better-defaults :variables
+                      better-defaults-move-to-end-of-code-first nil
+                      )
      emacs-lisp
      git
      markdown
@@ -64,12 +67,13 @@ values."
      spell-checking
      syntax-checking
      ;; version-control
+     hyliu
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(ox-reveal pomodoro youdao-dictionary org-sync-snippets yasnippet-snippets cdlatex auctex-lua)
+   dotspacemacs-additional-packages '(ox-reveal pomodoro org-sync-snippets yasnippet-snippets cdlatex auctex-lua)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -315,7 +319,7 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
- 
+
   ;; Darktooth theme is the default theme
   ;; Each theme is automatically installed.
   ;; Note that we drop the -theme from the package name.
@@ -331,7 +335,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
                                       ;;soothe
                                       ;;gotham
                                       ))
-  
+
   ;;(setq configuration-layer--elpa-archives
   ;;        ("org-cn"   . "http://elpa.emacs-china.org/org/")
   ;;        ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/"))
@@ -345,7 +349,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
       '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
         ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
         ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
-  
+
   ;;(setq url-proxy-services '(("no_proxy" . "127.0.0.1")
   ;;                         ("SOCKS5" . "127.0.0.1:1080")
   ;;                         ("SOCKS5" . "127.0.0.1:1080")
@@ -378,10 +382,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 This function is called at the very end of Spacemacs initialization after
 layers configuration.
 This is the place where most of your configurations should be done. Unless it is
-explicitly specified that a variable should be set before a package is loaded,
-you should place your code here." 
-
-  
+explicitly specified that a variable should be set before a package is loaded,"
   ;;;;; Emoji
   (if (version< "27.0" emacs-version)
       (set-fontset-font
@@ -400,8 +401,8 @@ you should place your code here."
   (setq org-startup-indented t)
 
   ;; 设置f7为透明度增加 f8透明度降低
-  (global-set-key (kbd "<f7>") 'spacemacs/increase-transparency) 
-  (global-set-key (kbd "<f8>") 'spacemacs/decrease-transparency) 
+  (global-set-key (kbd "<f7>") 'spacemacs/increase-transparency)
+  (global-set-key (kbd "<f8>") 'spacemacs/decrease-transparency)
 
   ;; 设置C-c m为avy-org-refile-as-child
   (global-set-key (kbd "C-c m") 'avy-org-refile-as-child)
@@ -412,10 +413,14 @@ you should place your code here."
   ;; 设置打开当前buffer的terminal的快捷方式
   (global-set-key (kbd "C-c t") (kbd "M-! open SPC -a SPC terminal SPC  ./"))
 
+  ;; 额外配置 better defaults layer
+  (define-key evil-insert-state-map (kbd "C-e") 'mwim-end-of-code-or-line)
+  (define-key evil-motion-state-map (kbd "C-e") 'mwim-end-of-code-or-line)
+
   ;;将jk等价于esc键位 
   (setq-default evil-escape-key-sequence "jk")
 
-  ;;(setq org-bullets-bullet-list '("🐳" "🐬" "🐡" "🐟" "🦀" "🦞"))
+  (setq org-bullets-bullet-list '("🐳" "🐬" "🐡" "🐟" "🦀" "🦞"))
 
   ;;(setq-default dotspacemacs-configuration-layers
   ;;              '((org :variables org-projectile-file "~/org-notes/task.org")))
