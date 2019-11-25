@@ -28,7 +28,8 @@
 ;;   `hyliu/post-init-PACKAGE' to customize the package as it is loaded.
 ;;; Code:
 (defconst hyliu-packages
-  '(youdao-dictionary)
+  '(youdao-dictionary
+    company)
   )
 
 ;; 初始化 package
@@ -40,5 +41,10 @@
     (spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point+)
    )
   )
+
+(defun hyliu/post-init-company()
+  (setq company-minimum-prefix-length 3)
+  )
+
 
 ;;; packages.el ends here

@@ -9,6 +9,7 @@ values."
   (setq-default
    ;; Base distribution to use. This is a layer contained in the directory
    ;; `+distribution'. For now available distributions are `spacemacs-base'
+
    ;; or `spacemacs'. (default 'spacemacs)
    dotspacemacs-distribution 'spacemacs
    ;; Lazy installation of layers (i.e. layers are installed only when a file
@@ -31,7 +32,8 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     javascript
+     hyliu
+     ;;javascript
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -44,8 +46,6 @@ values."
      c-c++
      latex
      bibtex
-     ivy
-     helm
      auto-completion
      (auto-completion :variables
                       auto-completion-enable-help-tooltip 'manual
@@ -53,6 +53,8 @@ values."
                       auto-completion-enable-sort-by-usage t
                       auto-completion-private-snippets-directory "~/.spacemacs.d/snippets/"
                       )
+
+     ;;ivy
      (better-defaults :variables
                       better-defaults-move-to-end-of-code-first nil
                       )
@@ -67,7 +69,6 @@ values."
      spell-checking
      syntax-checking
      ;; version-control
-     hyliu
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -320,6 +321,8 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
 
+  
+
   ;; Darktooth theme is the default theme
   ;; Each theme is automatically installed.
   ;; Note that we drop the -theme from the package name.
@@ -346,8 +349,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
   ;; melpa china mirrors
   (setq configuration-layer--elpa-archives
-      '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-        ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+        '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+          ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
         ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
 
   ;;(setq url-proxy-services '(("no_proxy" . "127.0.0.1")
@@ -383,13 +386,8 @@ This function is called at the very end of Spacemacs initialization after
 layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,"
-  ;;;;; Emoji
-  (if (version< "27.0" emacs-version)
-      (set-fontset-font
-       "fontset-default" 'unicode "Apple Color Emoji" nil 'prepend)
-    (set-fontset-font
-     t 'symbol (font-spec :family "Apple Color Emoji") nil 'prepend))
-
+  
+  
   ;; 修改org-mode下latex公式浏览大小
   ;; Enlarge LaTeX Fragment in Org-mode
   ;; Put this inside `dotspacemacs/user-config`
@@ -451,8 +449,14 @@ explicitly specified that a variable should be set before a package is loaded,"
 
   (setq org-agenda-file-inbox (expand-file-name "Inbox.org" org-agenda-dir))
   (setq org-agenda-file-finished (expand-file-name "finished.org" org-agenda-dir))
-  (setq org-agenda-file-task (expand-file-name "task.org" org-agenda-dir))
   (setq org-agenda-file-project (expand-file-name "project.org" org-agenda-dir))
+  (setq org-agenda-file-CheckList (expand-file-name "CheckList.org" org-agenda-dir))
+  (setq org-agenda-file-NextToDo (expand-file-name "NextToDo.org" org-agenda-dir))
+  (setq org-agenda-file-Resource (expand-file-name "Resource.org" org-agenda-dir))
+  (setq org-agenda-file-WaitingList (expand-file-name "WaitingList.org" org-agenda-dir))
+  (setq org-agenda-file-reminders (expand-file-name "reminders.org" org-agenda-dir))
+  (setq org-agenda-file-someday (expand-file-name "someday.org" org-agenda-dir))
+
   (setq org-agenda-files (list org-agenda-dir))
   (with-eval-after-load 'org-agenda
     (define-key org-agenda-mode-map (kbd "P") 'org-pomodoro)
@@ -464,21 +468,22 @@ explicitly specified that a variable should be set before a package is loaded,"
   ;;add multi-file journal
   (setq org-capture-templates
         '(
-          ("n" "Quick note" entry(file+headline org-agenda-file-inbox "Quick notes")
+          ("n" "Quick note" entry(file+headline org-agenda-file-inbox "Inbox")
            "* %? \n  %i\n %U"
            :empty-lines 1)
-          ("i" "Idea" entry (file+headline org-agenda-file-inbox "Ideas")
-           "* %? :@Idea:\n %i\n %U \n %a"
+          ("i" "Idea" entry (file+headline org-agenda-file-inbox "Inbox")
+           "* %? %i\n %U \n %a"
            :empty-lines 1)
         )
    )
 
-  (setq org-refile-targets (quote (("~/org-notes/task.org" :maxlevel . 1)
-                                   ("~/org-notes/project.org" :level . 1)
-                                   ("~/org-notes/note.org" :level . 1)
+  (setq org-refile-targets (quote (("~/org-notes/project.org" :level . 1)
                                    ("~/org-notes/finished.org" :level . 1)
-                                   ("~/org-notes/trash.org" :level . 1)
                                    ("~/org-notes/someday.org" :level . 1)
+                                   ("~/org-notes/NextToDo.org" :level . 1)
+                                   ("~/org-notes/WaitingList.org" :level . 1)
+                                   ("~/org-notes/Resource.org" :level . 1)
+                                   ("~/org-notes/reminders.org" :level . 1)
                                    )))
   ;;An entry without a cookie is treated just like priority ' B '.
   ;;So when create new task, they are default 重要且紧急
@@ -486,25 +491,16 @@ explicitly specified that a variable should be set before a package is loaded,"
   (setq org-agenda-custom-commands
         '(
           ("w" . "任务安排")
-          ("wa" "重要且紧急的任务" tags-todo "+PRIORITY=\"A\"")
+          ("wp" "Phone" tags-todo "+@Phone")
+          ("wI" "Ipad" tags-todo "+@Ipad")
+          ("wc" "Computer" tags-todo "+@Computer")
+          ("wl" "Lab" tags-todo "+@Lab")
+          ("wd" "Dormitory" tags-todo "+@Dormitory")
+          ("wi" "Internet" tags-todo "+@Internet")
+          ("wo" "OutDoor" tags-todo "+@OutDoor")
+          ("wh" "HighSpeedTrain" tags-todo "+@HighSpeedTrain")
+          ("wr" "Read" tags-todo "+@Read")
 
-          ("wp" . "地点安排")
-          ("wpl" "Lab" tags-todo "+@Lab")
-          ("wpi" "Internet" tags-todo "+@Internet")
-          ("wpo" "OutDoor" tags-todo "+@OutDoor")
-          ("wpc" "Computer" tags-todo "+@Computer")
-          ("wpd" "Dalian" tags-todo "+@Dalian")
-          ("wph" "HighSpeedTrain" tags-todo "+@HighSpeedTrain")
-          ("wpw" "Way" tags-todo "+@Way")
-          ("wpe" "ExPlace" tags-todo "+@ExPlace")
-          ("wpp" "Phone" tags-todo "+@Phone")
-
-          ("wt" . "时间安排")
-          ("wt1" "10分钟以内" tags-todo "+@10m")
-          ("wt2" "30分钟以内" tags-todo "+@30m")
-          ("wt3" "1小时以内" tags-todo "+@60m")
-          ("wt4" "1小时30分钟以内" tags-todo "+@90m")
-          ("wt5" "2小时以内" tags-todo "+@120m")
           ("W" "Weekly Review"
            ((stuck "") ;; review stuck projects as designated by org-stuck-projects
             (tags-todo "PROJECT") ;; review all projects (assuming you use todo keywords to designate projects)
