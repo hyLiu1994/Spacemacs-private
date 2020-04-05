@@ -1,5 +1,6 @@
 # -*- mode: snippet -*-
 # name: chinese latex package 
-# key: cn_latex_pacakge
+# key: latex_cn_pacakge
 # --
+
 #+LATEX_HEADER:\usepackage{ctex}

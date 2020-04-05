@@ -64,6 +64,8 @@ This function should only modify configuration layer settings."
      markdown
      osx
      org
+     (org :variables
+          org-want-todo-bindings t)
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -79,13 +81,13 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(cdlatex)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(nlinum-layer)
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -221,7 +223,7 @@ It should only modify the values of Spacemacs settings."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 18 
+                               :size 14
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -479,15 +481,15 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   ;;        ("gnu-cn"   . "http://mirrors.163.com/elpa/gnu/")))
   ;;
   ;; 鹅厂
-  ;; (setq configuration-layer-elpa-archives
-  ;;       '(("melpa-cn" . "http://mirrors.cloud.tencent.com/elpa/melpa/")
-  ;;         ("org-cn"   . "http://mirrors.cloud.tencent.com/elpa/org/")
-  ;;         ("gnu-cn"   . "http://mirrors.cloud.tencent.com/elpa/gnu/")))
-  ;; 清华
    (setq configuration-layer-elpa-archives
-         '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-           ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
-           ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
+         '(("melpa-cn" . "http://mirrors.cloud.tencent.com/elpa/melpa/")
+           ("org-cn"   . "http://mirrors.cloud.tencent.com/elpa/org/")
+           ("gnu-cn"   . "http://mirrors.cloud.tencent.com/elpa/gnu/")))
+  ;; 清华
+  ;; (setq configuration-layer-elpa-archives
+  ;;       '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+  ;;         ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+  ;;         ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
   ;; Emacs China
   ;; (setq configuration-layer-elpa-archives
   ;;       '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
@@ -517,7 +519,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq c-basic-offset 4)
 
   (setq-default dotspacemacs-configuration-layers
-                 '((org :variables org-projectile-file "~/org-notes/task.org")))
+                 '((org :variables org-projectile-file "~/org-notes/NextToDo.org")))
   (setq-default dotspacemacs-configuration-layers
                  '((latex :variables latex-build-command "XeLaTeX" latex-enable-auto-fill t latex-enable-folding t latex-enable-magic nil)))
 )
@@ -539,10 +541,15 @@ before packages are loaded."
   ;; Put this inside `dotspacemacs/user-config`
   (require 'org)
   (plist-put org-format-latex-options :scale 1.5)
-
   (setq spaceline-org-clock-p t)
   ;; org-mode 自动缩进
   (setq org-startup-indented t)
+
+  ;;全局参考文献位置
+  (setq reftex-default-bibliography '("~/hyliuTmpDir/Papers/references.bib"))
+  (setq org-ref-default-bibliography '("~/hyliuTmpDir/Papers/references.bib")
+        org-ref-pdf-directory "~/hyliuTmpDir/Papers/"
+        org-ref-bibliography-notes "~/hyliuTmpDir/Papers/notes.org")
 
   ;; 设置f7为透明度增加 f8透明度降低
   (global-set-key (kbd "<f7>") 'spacemacs/increase-transparency)
@@ -553,7 +560,6 @@ before packages are loaded."
 
   ;; 设置打开当前buffer的文件夹的快捷方式
   (global-set-key (kbd "C-c o") (kbd "M-! open SPC ./"))
-
   ;; 设置打开当前buffer的terminal的快捷方式
   (global-set-key (kbd "C-c t") (kbd "M-! open SPC -a SPC terminal SPC  ./"))
 
@@ -564,7 +570,7 @@ before packages are loaded."
   ;;将jk等价于esc键位 
   (setq-default evil-escape-key-sequence "jk")
 
-  (setq org-bullets-bullet-list '("🐳" "🐬" "🐡" "🐟" "🦀" "🦞"))
+  ;;(setq org-bullets-bullet-list '("🐳" "🐬" "🐡" "🐟" "🦀" "🦞"))
 
   ;;(setq-default dotspacemacs-configuration-layers
   ;;              '((org :variables org-projectile-file "~/org-notes/task.org")))
@@ -595,11 +601,11 @@ before packages are loaded."
 
   (setq org-agenda-file-inbox (expand-file-name "Inbox.org" org-agenda-dir))
   (setq org-agenda-file-finished (expand-file-name "finished.org" org-agenda-dir))
-  (setq org-agenda-file-project (expand-file-name "project.org" org-agenda-dir))
+  (setq org-agenda-file-project (expand-file-name "PlanProjectTask.org" org-agenda-dir))
   (setq org-agenda-file-CheckList (expand-file-name "CheckList.org" org-agenda-dir))
-  (setq org-agenda-file-NextToDo (expand-file-name "NextToDo.org" org-agenda-dir))
-  (setq org-agenda-file-Resource (expand-file-name "Resource.org" org-agenda-dir))
-  (setq org-agenda-file-WaitingList (expand-file-name "WaitingList.org" org-agenda-dir))
+  (setq org-agenda-file-NextToDo (expand-file-name "@ContextTask.org" org-agenda-dir))
+  (setq org-agenda-file-Resource (expand-file-name "Reference.org" org-agenda-dir))
+  (setq org-agenda-file-WaitingList (expand-file-name "WaitingForTask.org" org-agenda-dir))
   (setq org-agenda-file-reminders (expand-file-name "reminders.org" org-agenda-dir))
   (setq org-agenda-file-someday (expand-file-name "someday.org" org-agenda-dir))
 
@@ -623,12 +629,12 @@ before packages are loaded."
         )
    )
 
-  (setq org-refile-targets (quote (("~/org-notes/project.org" :level . 1)
+  (setq org-refile-targets (quote (("~/org-notes/PlanProjectTask.org" :level . 1)
                                    ("~/org-notes/finished.org" :level . 1)
                                    ("~/org-notes/someday.org" :level . 1)
-                                   ("~/org-notes/NextToDo.org" :level . 1)
+                                   ("~/org-notes/@ContextTask.org" :level . 1)
                                    ("~/org-notes/WaitingList.org" :level . 1)
-                                   ("~/org-notes/Resource.org" :level . 1)
+                                   ("~/org-notes/Reference.org" :level . 1)
                                    ("~/org-notes/reminders.org" :level . 1)
                                    )))
   ;;An entry without a cookie is treated just like priority ' B '.
@@ -681,6 +687,9 @@ before packages are loaded."
         (cons '("=" '(:emphasis t :foreground "VioletRed3"))
               (delete* "=" org-emphasis-alist :key 'car :test 'equal)))
 
+  ;; (setq org-image-actual-width (/ (display-pixel-width) 3))
+  (setq org-image-actual-width '(200))
+
   ;;自动追踪子任务完成情况更改TODO
   (defun org-summary-todo (n-done n-not-done)
     "Switch entry to DONE when all subentries are done, to TODO otherwise."
@@ -708,7 +717,19 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-download-screenshot-file "~/hyliuTmpDir/OrgDownloadDir/Screenshot.png"))
+ '(auto-save-list-file-prefix "/Users/hyliu/.emacs.d/.cache/auto-save/")
+ '(auto-save-timeout 3)
+ '(custom-safe-themes
+   (quote
+    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
+ '(org-agenda-files
+   (quote
+    ("~/Documents/File/WorkWorkWork/KnowledgeTracingWithLearningTransfer/KTLT_v2.org" "/Users/hyliu/org-notes/@ContextTask.org" "/Users/hyliu/org-notes/CheckList.org" "/Users/hyliu/org-notes/Inbox.org" "/Users/hyliu/org-notes/PlanProjectTask.org" "/Users/hyliu/org-notes/Reference.org" "/Users/hyliu/org-notes/WaitingForTask.org" "/Users/hyliu/org-notes/finished.org" "/Users/hyliu/org-notes/index.org" "/Users/hyliu/org-notes/reminders.org" "/Users/hyliu/org-notes/someday.org")))
+ '(org-download-screenshot-file "~/hyliuTmpDir/OrgDownloadDir/Screenshot.png")
+ '(org-tags-exclude-from-inheritance (quote ("spacemacs" "English" "Health" "Sport")))
+ '(package-selected-packages
+   (quote
+    (cdlatex yaml-mode utop tuareg caml seeing-is-believing rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocopfmt rubocop rspec-mode robe rbenv rake ocp-indent ob-elixir nodejs-repl mvn minitest meghanada maven-test-mode lsp-ui lsp-treemacs lsp-python-ms lsp-java livid-mode skewer-mode json-navigator hierarchy json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc helm-lsp groovy-mode groovy-imports pcache gradle-mode git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter flycheck-ocaml merlin flycheck-mix flycheck-credo emojify emoji-cheat-sheet-plus dune diff-hl cquery company-tern tern company-lsp company-emoji chruby ccls lsp-mode dash-functional bundler inf-ruby browse-at-remote auto-complete-rst alchemist elixir-mode youdao-dictionary yasnippet-snippets yapfify ws-butler writeroom-mode winum which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package unfill treemacs-projectile treemacs-magit treemacs-evil toc-org tagedit symon symbol-overlay string-inflection spaceline-all-the-icons smeargle slim-mode scss-mode sass-mode reveal-in-osx-finder restart-emacs rainbow-delimiters pytest pyenv-mode py-isort pug-mode prettier-js popwin pippel pipenv pip-requirements persp-mode pcre2el password-generator paradox overseer osx-trash osx-dictionary osx-clipboard orgit org-ref org-projectile org-present org-pomodoro org-mime org-download org-cliplink org-bullets org-brain open-junk-file nameless mwim move-text monokai-theme mmm-mode markdown-toc magit-svn magit-gitflow macrostep lorem-ipsum live-py-mode link-hint launchctl indent-guide importmagic impatient-mode hybrid-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-rtags helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-ls-git helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag graphviz-dot-mode google-translate google-c-style golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-ycmd flycheck-rtags flycheck-pos-tip flycheck-package flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu emmet-mode elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-modeline disaster diminish devdocs cython-mode csv-mode cpp-auto-include company-ycmd company-web company-statistics company-rtags company-reftex company-quickhelp company-c-headers company-auctex company-anaconda column-enforce-mode clean-aindent-mode clang-format centered-cursor-mode blacken auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk aggressive-indent ace-link ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
