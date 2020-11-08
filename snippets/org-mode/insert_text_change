@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: insert_text_change
+# key: insertTextChange
+# --
+
+\color{red}\sout{${1: PText}}\color{blue}\uwave{${2: CText}}\color{black}

@@ -39,11 +39,11 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     python
      hyliu
      html
      graphviz
      csv
-     python
      c-c++
      latex
      bibtex
@@ -473,6 +473,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
                                       ;;soothe
                                       ;;gotham
                                       ))
+  (setq markdown-command "/usr/local/Cellar/pandoc/2.7.3/bin/pandoc")
   ;; 国内源 BEGIN
   ;; 猪场
   ;;(setq configuration-layer-elpa-archives
@@ -699,10 +700,57 @@ before packages are loaded."
   (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
 
   ;;设置latex 默认编译器为xelatex
-  (setq org-latex-pdf-process '("xelatex -interaction nonstopmode %f"
-                                "xelatex -interaction nonstopmode %f"))
+  ;;(setq org-latex-pdf-process '("xelatex -interaction nonstopmode %f"
+  ;;                              "xelatex -interaction nonstopmode %f"))
   (setq org-latex-default-packages-alist
         (remove '("AUTO" "inputenc" t) org-latex-default-packages-alist))
+  ;;org-export latex
+  (require 'ox-latex)
+  (add-to-list 'org-latex-classes
+             '("IEEEACCESS"
+               "\\documentclass{ieeeaccess}
+                \\usepackage{cite}
+                \\usepackage{amsmath,amssymb,amsfonts}
+                \\usepackage{algorithmic}
+                \\usepackage{graphicx}
+                \\usepackage{textcomp}"
+                ("\\section{%s}" . "\\section*{%s}")
+                ("\\subsection{%s}" . "\\subsection*{%s}")
+                ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+  (add-to-list 'org-latex-classes
+               '("AAAI2021"
+                 "\\def\\year{2021}\\relax
+\\documentclass[letterpaper]{article} % DO NOT CHANGE THIS
+\\usepackage{aaai21}  % DO NOT CHANGE THIS
+\\usepackage{times}  % DO NOT CHANGE THIS
+\\usepackage{helvet} % DO NOT CHANGE THIS
+\\usepackage{courier}  % DO NOT CHANGE THIS
+\\usepackage{hyperref}  
+\\usepackage[hyphens]{url}  % DO NOT CHANGE THIS
+\\usepackage{graphicx} % DO NOT CHANGE THIS
+\\urlstyle{rm} % DO NOT CHANGE THIS
+\\def\\UrlFont{\\rm}  % DO NOT CHANGE THIS
+\\frenchspacing  % DO NOT CHANGE THIS
+\\setlength{\\pdfpagewidth}{8.5in}  % DO NOT CHANGE THIS
+\\setlength{\\pdfpageheight}{11in}  % DO NOT CHANGE THIS
+\\setcounter{secnumdepth}{0} %May be changed to 1 or 2 if section numbers are desired.
+\\setlength\\titlebox{2.5in} % If your paper contains an overfull \vbox too high warning at the.
+%PDF Info Is REQUIRED.
+% For /Author, add all authors within the parentheses, separated by commas. No accents or commands.
+% For /Title, add Title in Mixed Case. No accents or commands. Retain the parentheses.
+\\pdfinfo{
+/Title (Knowledge Concept Representation Learning Based on Students Exercise Sequence)
+/Author (anonymous)
+/TemplateVersion (2021.1)
+} %Leave this
+"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -724,12 +772,12 @@ This function is called at the very end of Spacemacs initialization."
     ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
  '(org-agenda-files
    (quote
-    ("~/Documents/File/WorkWorkWork/KnowledgeTracingWithLearningTransfer/KTLT_v2.org" "/Users/hyliu/org-notes/@ContextTask.org" "/Users/hyliu/org-notes/CheckList.org" "/Users/hyliu/org-notes/Inbox.org" "/Users/hyliu/org-notes/PlanProjectTask.org" "/Users/hyliu/org-notes/Reference.org" "/Users/hyliu/org-notes/WaitingForTask.org" "/Users/hyliu/org-notes/finished.org" "/Users/hyliu/org-notes/index.org" "/Users/hyliu/org-notes/reminders.org" "/Users/hyliu/org-notes/someday.org")))
+    ("/Users/hyliu/org-notes/@ContextTask.org" "/Users/hyliu/org-notes/CheckList.org" "/Users/hyliu/org-notes/Inbox.org" "/Users/hyliu/org-notes/PlanProjectTask.org" "/Users/hyliu/org-notes/Reference.org" "/Users/hyliu/org-notes/WaitingForTask.org" "/Users/hyliu/org-notes/finished.org" "/Users/hyliu/org-notes/index.org" "/Users/hyliu/org-notes/reminders.org" "/Users/hyliu/org-notes/someday.org")))
  '(org-download-screenshot-file "~/hyliuTmpDir/OrgDownloadDir/Screenshot.png")
  '(org-tags-exclude-from-inheritance (quote ("spacemacs" "English" "Health" "Sport")))
  '(package-selected-packages
    (quote
-    (cdlatex yaml-mode utop tuareg caml seeing-is-believing rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocopfmt rubocop rspec-mode robe rbenv rake ocp-indent ob-elixir nodejs-repl mvn minitest meghanada maven-test-mode lsp-ui lsp-treemacs lsp-python-ms lsp-java livid-mode skewer-mode json-navigator hierarchy json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc helm-lsp groovy-mode groovy-imports pcache gradle-mode git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter flycheck-ocaml merlin flycheck-mix flycheck-credo emojify emoji-cheat-sheet-plus dune diff-hl cquery company-tern tern company-lsp company-emoji chruby ccls lsp-mode dash-functional bundler inf-ruby browse-at-remote auto-complete-rst alchemist elixir-mode youdao-dictionary yasnippet-snippets yapfify ws-butler writeroom-mode winum which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package unfill treemacs-projectile treemacs-magit treemacs-evil toc-org tagedit symon symbol-overlay string-inflection spaceline-all-the-icons smeargle slim-mode scss-mode sass-mode reveal-in-osx-finder restart-emacs rainbow-delimiters pytest pyenv-mode py-isort pug-mode prettier-js popwin pippel pipenv pip-requirements persp-mode pcre2el password-generator paradox overseer osx-trash osx-dictionary osx-clipboard orgit org-ref org-projectile org-present org-pomodoro org-mime org-download org-cliplink org-bullets org-brain open-junk-file nameless mwim move-text monokai-theme mmm-mode markdown-toc magit-svn magit-gitflow macrostep lorem-ipsum live-py-mode link-hint launchctl indent-guide importmagic impatient-mode hybrid-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-rtags helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-ls-git helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag graphviz-dot-mode google-translate google-c-style golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-ycmd flycheck-rtags flycheck-pos-tip flycheck-package flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu emmet-mode elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-modeline disaster diminish devdocs cython-mode csv-mode cpp-auto-include company-ycmd company-web company-statistics company-rtags company-reftex company-quickhelp company-c-headers company-auctex company-anaconda column-enforce-mode clean-aindent-mode clang-format centered-cursor-mode blacken auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk aggressive-indent ace-link ace-jump-helm-line ac-ispell))))
+    (stickyfunc-enhance pyvenv epc ctable concurrent helm-gtags helm-cscope xcscope ggtags counsel-gtags counsel swiper anaconda-mode pythonic dap-mode posframe bui with-editor transient dash cdlatex yaml-mode utop tuareg caml seeing-is-believing rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocopfmt rubocop rspec-mode robe rbenv rake ocp-indent ob-elixir nodejs-repl mvn minitest meghanada maven-test-mode lsp-ui lsp-treemacs lsp-python-ms lsp-java livid-mode skewer-mode json-navigator hierarchy json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc helm-lsp groovy-mode groovy-imports pcache gradle-mode git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter flycheck-ocaml merlin flycheck-mix flycheck-credo emojify emoji-cheat-sheet-plus dune diff-hl cquery company-tern tern company-lsp company-emoji chruby ccls lsp-mode dash-functional bundler inf-ruby browse-at-remote auto-complete-rst alchemist elixir-mode youdao-dictionary yasnippet-snippets yapfify ws-butler writeroom-mode winum which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package unfill treemacs-projectile treemacs-magit treemacs-evil toc-org tagedit symon symbol-overlay string-inflection spaceline-all-the-icons smeargle slim-mode scss-mode sass-mode reveal-in-osx-finder restart-emacs rainbow-delimiters pytest pyenv-mode py-isort pug-mode prettier-js popwin pippel pipenv pip-requirements persp-mode pcre2el password-generator paradox overseer osx-trash osx-dictionary osx-clipboard orgit org-ref org-projectile org-present org-pomodoro org-mime org-download org-cliplink org-bullets org-brain open-junk-file nameless mwim move-text monokai-theme mmm-mode markdown-toc magit-svn magit-gitflow macrostep lorem-ipsum live-py-mode link-hint launchctl indent-guide importmagic impatient-mode hybrid-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-rtags helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-ls-git helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag graphviz-dot-mode google-translate google-c-style golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-ycmd flycheck-rtags flycheck-pos-tip flycheck-package flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu emmet-mode elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-modeline disaster diminish devdocs cython-mode csv-mode cpp-auto-include company-ycmd company-web company-statistics company-rtags company-reftex company-quickhelp company-c-headers company-auctex company-anaconda column-enforce-mode clean-aindent-mode clang-format centered-cursor-mode blacken auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk aggressive-indent ace-link ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
