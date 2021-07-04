@@ -33,14 +33,14 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
+   '(javascript
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     python
      hyliu
+     python
      html
      graphviz
      csv
@@ -476,16 +476,16 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq markdown-command "/usr/local/Cellar/pandoc/2.7.3/bin/pandoc")
   ;; 国内源 BEGIN
   ;; 猪场
-  ;;(setq configuration-layer-elpa-archives
-  ;;      '(("melpa-cn" . "http://mirrors.163.com/elpa/melpa/")
-  ;;        ("org-cn"   . "http://mirrors.163.com/elpa/org/")
-  ;;        ("gnu-cn"   . "http://mirrors.163.com/elpa/gnu/")))
+  (setq configuration-layer-elpa-archives
+        '(("melpa-cn" . "http://mirrors.163.com/elpa/melpa/")
+          ("org-cn"   . "http://mirrors.163.com/elpa/org/")
+          ("gnu-cn"   . "http://mirrors.163.com/elpa/gnu/")))
   ;;
   ;; 鹅厂
-   (setq configuration-layer-elpa-archives
-         '(("melpa-cn" . "http://mirrors.cloud.tencent.com/elpa/melpa/")
-           ("org-cn"   . "http://mirrors.cloud.tencent.com/elpa/org/")
-           ("gnu-cn"   . "http://mirrors.cloud.tencent.com/elpa/gnu/")))
+  ;; (setq configuration-layer-elpa-archives
+  ;;       '(("melpa-cn" . "http://mirrors.cloud.tencent.com/elpa/melpa/")
+  ;;         ("org-cn"   . "http://mirrors.cloud.tencent.com/elpa/org/")
+  ;;         ("gnu-cn"   . "http://mirrors.cloud.tencent.com/elpa/gnu/")))
   ;; 清华
   ;; (setq configuration-layer-elpa-archives
   ;;       '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
@@ -513,6 +513,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
    
   ;;(setq org-reveal-root "file:///Users/liusixu/Documents/ProgramCode/reveal.js/")
   (setq org-reveal-root "https://cdn.bootcss.com/reveal.js/3.8.0/")
+  (setq anaconda-mode-localhost-address "localhost")
 
   (setq tramp-ssh-controlmaster-options
          "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
@@ -702,8 +703,8 @@ before packages are loaded."
   ;;设置latex 默认编译器为xelatex
   ;;(setq org-latex-pdf-process '("xelatex -interaction nonstopmode %f"
   ;;                              "xelatex -interaction nonstopmode %f"))
-  (setq org-latex-default-packages-alist
-        (remove '("AUTO" "inputenc" t) org-latex-default-packages-alist))
+  ;;(setq org-latex-default-packages-alist
+  ;;      (remove '("AUTO" "inputenc" t) org-latex-default-packages-alist))
   ;;org-export latex
   (require 'ox-latex)
   (add-to-list 'org-latex-classes
@@ -719,6 +720,81 @@ before packages are loaded."
                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+  (add-to-list 'org-latex-classes
+               '("IJCAI2021"
+                 "\\documentclass{article}
+\\pdfpagewidth=8.5in
+\\pdfpageheight=11in
+% The file ijcai20.sty is NOT the same than previous years'
+\\usepackage{ijcai21}
+% Use the postscript times font!
+\\usepackage{times}
+\\usepackage{soul}
+\\usepackage{url}
+\\usepackage[hidelinks]{hyperref}
+\\usepackage[utf8]{inputenc}
+\\usepackage[small]{caption}
+\\usepackage{graphicx}
+\\usepackage{amsmath}
+\\usepackage{amsthm}
+\\usepackage{booktabs}
+\\usepackage{algorithm}
+\\usepackage{algorithmic}
+\\urlstyle{same}
+\\pdfinfo{
+/TemplateVersion (IJCAI.2021.0)
+}"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+  (add-to-list 'org-latex-classes
+               '("IJCAI2020"
+                 "\\documentclass{article}
+\\pdfpagewidth=8.5in
+\\pdfpageheight=11in
+% The file ijcai20.sty is NOT the same than previous years'
+\\usepackage{ijcai20}
+
+% Use the postscript times font!
+\\usepackage{times}
+\\renewcommand*\\ttdefault{txtt}
+\\usepackage{soul}
+\\usepackage{url}
+\\usepackage[hidelinks]{hyperref}
+\\usepackage[utf8]{inputenc}
+\\usepackage[small]{caption}
+\\usepackage{graphicx}
+\\usepackage{amsmath}
+\\usepackage{booktabs}
+\\urlstyle{same}"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+  (add-to-list 'org-latex-classes
+               '("KDD2021"
+                 "\\documentclass[sigconf]{acmart}
+\\AtBeginDocument{%
+  \\providecommand\\BibTeX{{%
+    \\normalfont B\\kern-0.5em{\scshape i\\kern-0.25em b}\\kern-0.8em\\TeX}}}
+\\setcopyright{acmcopyright}
+\\copyrightyear{2021}
+\\acmYear{2021}
+\\acmDOI{10.1145/1122445.1122456}
+\\acmConference[KDD'21]{KDD'21: 2021 Association for Computing Machinery
+}{August 14--18, 2021}{Virtual Event, USA}
+\\acmBooktitle{KDD'21: 2021 Association for Computing Machinery,
+  August 14--18, 2021, Virtual Event, USA}
+\\acmPrice{15.00}
+\\acmISBN{978-1-4503-XXXX-X/18/06}"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
   (add-to-list 'org-latex-classes
                '("AAAI2021"
                  "\\def\\year{2021}\\relax
@@ -751,6 +827,21 @@ before packages are loaded."
                  ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
                  ("\\paragraph{%s}" . "\\paragraph*{%s}")
                  ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+  (add-to-list 'org-latex-classes
+               '("TKDE 2021"
+                 "\\documentclass[10pt,journal,compsoc]{IEEEtran}
+\\ifCLASSOPTIONcompsoc
+\\usepackage[nocompress]{cite}
+\\else
+\\usepackage{cite}
+\\fi
+\\hyphenation{op-tical net-works semi-conduc-tor}
+"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -770,6 +861,24 @@ This function is called at the very end of Spacemacs initialization."
  '(custom-safe-themes
    (quote
     ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
+ '(evil-want-Y-yank-to-eol nil)
+ '(hl-todo-keyword-faces
+   (quote
+    (("TODO" . "#dc752f")
+     ("NEXT" . "#dc752f")
+     ("THEM" . "#2d9574")
+     ("PROG" . "#4f97d7")
+     ("OKAY" . "#4f97d7")
+     ("DONT" . "#f2241f")
+     ("FAIL" . "#f2241f")
+     ("DONE" . "#86dc2f")
+     ("NOTE" . "#b1951d")
+     ("KLUDGE" . "#b1951d")
+     ("HACK" . "#b1951d")
+     ("TEMP" . "#b1951d")
+     ("FIXME" . "#dc752f")
+     ("XXX+" . "#dc752f")
+     ("\\?\\?\\?+" . "#dc752f"))))
  '(org-agenda-files
    (quote
     ("/Users/hyliu/org-notes/@ContextTask.org" "/Users/hyliu/org-notes/CheckList.org" "/Users/hyliu/org-notes/Inbox.org" "/Users/hyliu/org-notes/PlanProjectTask.org" "/Users/hyliu/org-notes/Reference.org" "/Users/hyliu/org-notes/WaitingForTask.org" "/Users/hyliu/org-notes/finished.org" "/Users/hyliu/org-notes/index.org" "/Users/hyliu/org-notes/reminders.org" "/Users/hyliu/org-notes/someday.org")))
@@ -777,7 +886,8 @@ This function is called at the very end of Spacemacs initialization."
  '(org-tags-exclude-from-inheritance (quote ("spacemacs" "English" "Health" "Sport")))
  '(package-selected-packages
    (quote
-    (stickyfunc-enhance pyvenv epc ctable concurrent helm-gtags helm-cscope xcscope ggtags counsel-gtags counsel swiper anaconda-mode pythonic dap-mode posframe bui with-editor transient dash cdlatex yaml-mode utop tuareg caml seeing-is-believing rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocopfmt rubocop rspec-mode robe rbenv rake ocp-indent ob-elixir nodejs-repl mvn minitest meghanada maven-test-mode lsp-ui lsp-treemacs lsp-python-ms lsp-java livid-mode skewer-mode json-navigator hierarchy json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc helm-lsp groovy-mode groovy-imports pcache gradle-mode git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter flycheck-ocaml merlin flycheck-mix flycheck-credo emojify emoji-cheat-sheet-plus dune diff-hl cquery company-tern tern company-lsp company-emoji chruby ccls lsp-mode dash-functional bundler inf-ruby browse-at-remote auto-complete-rst alchemist elixir-mode youdao-dictionary yasnippet-snippets yapfify ws-butler writeroom-mode winum which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package unfill treemacs-projectile treemacs-magit treemacs-evil toc-org tagedit symon symbol-overlay string-inflection spaceline-all-the-icons smeargle slim-mode scss-mode sass-mode reveal-in-osx-finder restart-emacs rainbow-delimiters pytest pyenv-mode py-isort pug-mode prettier-js popwin pippel pipenv pip-requirements persp-mode pcre2el password-generator paradox overseer osx-trash osx-dictionary osx-clipboard orgit org-ref org-projectile org-present org-pomodoro org-mime org-download org-cliplink org-bullets org-brain open-junk-file nameless mwim move-text monokai-theme mmm-mode markdown-toc magit-svn magit-gitflow macrostep lorem-ipsum live-py-mode link-hint launchctl indent-guide importmagic impatient-mode hybrid-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-rtags helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-ls-git helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag graphviz-dot-mode google-translate google-c-style golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-ycmd flycheck-rtags flycheck-pos-tip flycheck-package flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu emmet-mode elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-modeline disaster diminish devdocs cython-mode csv-mode cpp-auto-include company-ycmd company-web company-statistics company-rtags company-reftex company-quickhelp company-c-headers company-auctex company-anaconda column-enforce-mode clean-aindent-mode clang-format centered-cursor-mode blacken auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk aggressive-indent ace-link ace-jump-helm-line ac-ispell))))
+    (sphinx-doc visual-fill-column magit stickyfunc-enhance pyvenv epc ctable concurrent helm-gtags helm-cscope xcscope ggtags counsel-gtags counsel swiper anaconda-mode pythonic dap-mode posframe bui with-editor transient dash cdlatex yaml-mode utop tuareg caml seeing-is-believing rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocopfmt rubocop rspec-mode robe rbenv rake ocp-indent ob-elixir nodejs-repl mvn minitest meghanada maven-test-mode lsp-ui lsp-treemacs lsp-python-ms lsp-java livid-mode skewer-mode json-navigator hierarchy json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc helm-lsp groovy-mode groovy-imports pcache gradle-mode git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter flycheck-ocaml merlin flycheck-mix flycheck-credo emojify emoji-cheat-sheet-plus dune diff-hl cquery company-tern tern company-lsp company-emoji chruby ccls lsp-mode dash-functional bundler inf-ruby browse-at-remote auto-complete-rst alchemist elixir-mode youdao-dictionary yasnippet-snippets yapfify ws-butler writeroom-mode winum which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package unfill treemacs-projectile treemacs-magit treemacs-evil toc-org tagedit symon symbol-overlay string-inflection spaceline-all-the-icons smeargle slim-mode scss-mode sass-mode reveal-in-osx-finder restart-emacs rainbow-delimiters pytest pyenv-mode py-isort pug-mode prettier-js popwin pippel pipenv pip-requirements persp-mode pcre2el password-generator paradox overseer osx-trash osx-dictionary osx-clipboard orgit org-ref org-projectile org-present org-pomodoro org-mime org-download org-cliplink org-bullets org-brain open-junk-file nameless mwim move-text monokai-theme mmm-mode markdown-toc magit-svn magit-gitflow macrostep lorem-ipsum live-py-mode link-hint launchctl indent-guide importmagic impatient-mode hybrid-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-rtags helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-ls-git helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag graphviz-dot-mode google-translate google-c-style golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-ycmd flycheck-rtags flycheck-pos-tip flycheck-package flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu emmet-mode elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-modeline disaster diminish devdocs cython-mode csv-mode cpp-auto-include company-ycmd company-web company-statistics company-rtags company-reftex company-quickhelp company-c-headers company-auctex company-anaconda column-enforce-mode clean-aindent-mode clang-format centered-cursor-mode blacken auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk aggressive-indent ace-link ace-jump-helm-line ac-ispell)))
+ '(pdf-view-midnight-colors (quote ("#b2b2b2" . "#292b2e"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
