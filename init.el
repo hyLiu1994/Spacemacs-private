@@ -54,7 +54,6 @@ This function should only modify configuration layer settings."
                       auto-completion-enable-sort-by-usage t
                       auto-completion-private-snippets-directory "~/.spacemacs.d/snippets/"
                       )
-
      ;;ivy
      (better-defaults :variables
                       better-defaults-move-to-end-of-code-first nil
@@ -476,10 +475,10 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq markdown-command "/usr/local/Cellar/pandoc/2.7.3/bin/pandoc")
   ;; 国内源 BEGIN
   ;; 猪场
-  (setq configuration-layer-elpa-archives
-        '(("melpa-cn" . "http://mirrors.163.com/elpa/melpa/")
-          ("org-cn"   . "http://mirrors.163.com/elpa/org/")
-          ("gnu-cn"   . "http://mirrors.163.com/elpa/gnu/")))
+  ;;(setq configuration-layer-elpa-archives
+  ;;    '(("melpa-cn" . "http://mirrors.163.com/elpa/melpa/")
+  ;;      ("org-cn"   . "http://mirrors.163.com/elpa/org/")
+  ;;      ("gnu-cn"   . "http://mirrors.163.com/elpa/gnu/")))
   ;;
   ;; 鹅厂
   ;; (setq configuration-layer-elpa-archives
@@ -492,15 +491,15 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   ;;         ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
   ;;         ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
   ;; Emacs China
-  ;; (setq configuration-layer-elpa-archives
+  ;;   (setq configuration-layer-elpa-archives
   ;;       '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
   ;;         ("org-cn"   . "http://elpa.emacs-china.org/org/")
   ;;         ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
 
-  ;;(setq url-proxy-services '(("no_proxy" . "127.0.0.1")
-  ;;                         ("SOCKS5" . "127.0.0.1:1080")
-  ;;                         ("SOCKS5" . "127.0.0.1:1080")
-  ;;                         ))
+  (setq url-proxy-services '(("no_proxy" . "127.0.0.1")
+                           ("SOCKS5" . "127.0.0.1:1080")
+                           ("SOCKS5" . "127.0.0.1:1080")
+                           ))
   ;; 国内源 END
 
   ;; 表格等宽 Begin
@@ -563,7 +562,7 @@ before packages are loaded."
   ;; 设置打开当前buffer的文件夹的快捷方式
   (global-set-key (kbd "C-c o") (kbd "M-! open SPC ./"))
   ;; 设置打开当前buffer的terminal的快捷方式
-  (global-set-key (kbd "C-c t") (kbd "M-! open SPC -a SPC terminal SPC  ./"))
+  (global-set-key (kbd "C-c t") (kbd "M-! open SPC -a SPC iTerm SPC  ./"))
 
   ;; 额外配置 better defaults layer
   (define-key evil-insert-state-map (kbd "C-e") 'mwim-end-of-code-or-line)
@@ -856,7 +855,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(auto-save-list-file-prefix "/Users/hyliu/.emacs.d/.cache/auto-save/")
+ '(auto-save-list-file-prefix "/Users/hengyuliu/.emacs.d/.cache/auto-save/")
  '(auto-save-timeout 3)
  '(custom-safe-themes
    (quote
@@ -881,7 +880,7 @@ This function is called at the very end of Spacemacs initialization."
      ("\\?\\?\\?+" . "#dc752f"))))
  '(org-agenda-files
    (quote
-    ("/Users/hyliu/org-notes/@ContextTask.org" "/Users/hyliu/org-notes/CheckList.org" "/Users/hyliu/org-notes/Inbox.org" "/Users/hyliu/org-notes/PlanProjectTask.org" "/Users/hyliu/org-notes/Reference.org" "/Users/hyliu/org-notes/WaitingForTask.org" "/Users/hyliu/org-notes/finished.org" "/Users/hyliu/org-notes/index.org" "/Users/hyliu/org-notes/reminders.org" "/Users/hyliu/org-notes/someday.org")))
+    ("/Users/hengyuliu/org-notes/@ContextTask.org" "/Users/hengyuliu/org-notes/CheckList.org" "/Users/hengyuliu/org-notes/Inbox.org" "/Users/hengyuliu/org-notes/PlanProjectTask.org" "/Users/hengyuliu/org-notes/Reference.org" "/Users/hengyuliu/org-notes/WaitingForTask.org" "/Users/hengyuliu/org-notes/finished.org" "/Users/hengyuliu/org-notes/index.org" "/Users/hengyuliu/org-notes/reminders.org" "/Users/hengyuliu/org-notes/someday.org")))
  '(org-download-screenshot-file "~/hyliuTmpDir/OrgDownloadDir/Screenshot.png")
  '(org-tags-exclude-from-inheritance (quote ("spacemacs" "English" "Health" "Sport")))
  '(package-selected-packages

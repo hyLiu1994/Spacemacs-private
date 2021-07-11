@@ -1,4 +1,4 @@
-;;; packages.el --- hyliu layer packages file for Spacemacs.
+;; packages.el --- hyliu layer packages file for Spacemacs.
 ;;
 ;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
